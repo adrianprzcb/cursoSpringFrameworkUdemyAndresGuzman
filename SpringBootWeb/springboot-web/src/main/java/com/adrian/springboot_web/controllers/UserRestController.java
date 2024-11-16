@@ -7,20 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.adrian.springboot_web.models.User;
+
 @RestController
 @RequestMapping("/api")
 public class UserRestController {
 
     @GetMapping("/details")
-    public String details() {
-        Map<String, String> body = new HashMap<>();
+    public Map<String, Object> details() {
+        User user = new User("Adrian", "Gonzalez");
+        Map<String, Object> body = new HashMap<>();
 
         body.put("title", "Spring Boot App");
-        body.put("name", "Adrian");
-        body.put("lastname", "Gonzalez");
+        body.put("name", user);
 
 
-        return body.toString();
+        return body;
     }
     
 }
