@@ -31,7 +31,8 @@ public class UserRestController {
     public UserDto detailsDto() {
         UserDto userDto = new UserDto();
         User user = new User("Adrian", "Gonzalez");
-        userDto.setUser(user);
+        userDto.setName(user.getName());
+        userDto.setLastname(user.getLastname());
         userDto.setTitle("Hola Mundo Spring Boot");
     
 

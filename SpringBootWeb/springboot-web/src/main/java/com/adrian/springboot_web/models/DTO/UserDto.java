@@ -5,7 +5,8 @@ import com.adrian.springboot_web.models.User;
 public class UserDto {
     
     private String title;
-    private User User;
+    private String name;
+    private String lastname;
 
     public String getTitle() {
         return title;
@@ -13,13 +14,22 @@ public class UserDto {
     public void setTitle(String title) {
         this.title = title;
     }
-    public User getUser() {
-        return User;
-    }
-    public void setUser(User user) {
-        User = user;
+  
+    public String getName() {
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
     
 
 }
