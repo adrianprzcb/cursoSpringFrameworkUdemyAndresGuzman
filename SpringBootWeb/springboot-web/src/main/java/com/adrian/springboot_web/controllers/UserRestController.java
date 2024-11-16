@@ -1,6 +1,8 @@
 package com.adrian.springboot_web.controllers;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +39,16 @@ public class UserRestController {
     
 
         return userDto;
+    }
+
+
+    @GetMapping("/list")
+    public List<User> list() {
+        List<User> users = new ArrayList<>();
+        users.add(new User("Adrian", "Gonzalez"));
+        users.add(new User("John", "Doe"));
+        users.add(new User("Jane", "Doe"));
+        return users;
     }
 
     
