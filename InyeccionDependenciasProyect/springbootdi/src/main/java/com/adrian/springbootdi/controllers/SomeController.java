@@ -25,5 +25,5 @@ public class SomeController {
     @GetMapping("/{id}")
     public Product show(@PathVariable Long id){
         return service.findById(id);
-    }
+    }   
 }
