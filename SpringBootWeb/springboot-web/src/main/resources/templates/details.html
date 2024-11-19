@@ -12,10 +12,15 @@
         <li th:text="${user.lastname}">A</li>
         <li th:if="${user.email == null}" th:text="${'No tiene mail'}">A</li>
     </ul>
+<a th:href="@{/list}">Ver Listado</a>
+<a th:href="@{/api/params/foo?message=' + ${title}}">Ver Mensaje</a>
+<a th:href="@{/api/params/foo?message=HolaQueTalFestival}">Ver Mensaje2</a>
+<a th:href="@{/api/params/foo(message='Hola festi')}">Ver Mensaje3</a>
+<a th:href="@{/api/params/bar(text='Hola festi', code=3232)}">Ver Mensaje4</a>
 
 
     
-    <table th:if="${not users.isEmpty()}">
+  <!--  <table th:if="${not users.isEmpty()}">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -31,6 +36,6 @@
                 <td th:if="${user.email == null}" th:text="'N/A'"></td>
             </tr>
         </tbody>
-    </table>
+    </table>-->
 </body>
 </html>
