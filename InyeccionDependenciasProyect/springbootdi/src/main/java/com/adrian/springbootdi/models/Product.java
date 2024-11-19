@@ -4,12 +4,12 @@ public class Product {
 
     private Long id;
     private String name;
-    private Double price;
+    private Long price;
 
     public Product() {
     }
 
-    public Product(Long id, String name, Double price) {
+    public Product(Long id, String name, Long price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -31,11 +31,11 @@ public class Product {
         this.name = name;
     }
 
-    public Double getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 
