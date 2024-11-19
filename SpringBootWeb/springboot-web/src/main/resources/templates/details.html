@@ -17,6 +17,8 @@
 <a th:href="@{/api/params/foo?message=HolaQueTalFestival}">Ver Mensaje2</a>
 <a th:href="@{/api/params/foo(message='Hola festi')}">Ver Mensaje3</a>
 <a th:href="@{/api/params/bar(text='Hola festi', code=3232)}">Ver Mensaje4</a>
+<a th:href="@{'/api/var/baz/' + ${title}}">Ver pathvariable</a>
+<a th:href="@{'/api/var/baz/' + 'wowowo'}">Ver pathvariable</a>
 
 
     
