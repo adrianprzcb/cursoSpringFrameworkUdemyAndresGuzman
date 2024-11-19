@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.adrian.springboot_web.models.DTO.ParamDto;
 import com.adrian.springboot_web.models.DTO.ParamMixDto;
 
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("/api/params")
 public class RequestParamController {
@@ -26,6 +29,16 @@ public class RequestParamController {
             ParamMixDto params = new ParamMixDto();
             params.setMessage(text);
             params.setCode(code);
+            return params;
+        }
+
+
+
+        @GetMapping("/request")
+        public ParamMixDto request(HttpServletRequest request){
+            ParamMixDto params = new ParamMixDto();
+            params.setMessage(request.getParameter("message"));
+            params.setCode(Integer.parseInt(request.getParameter("code")));
             return params;
         }
     }
