@@ -84,6 +84,7 @@ public class PathVariableController{
         json.put("message", message);
         json.put("code", code);
         json.put("environment33", environment.getProperty("config.message"));
+        json.put("codeEnvironment", environment.getProperty("config.code", Integer.class));
         json.put("listOfValues", listOfValues);
         json.put("valueList", valueList);
         json.put("valuesMap", valuesMap);
