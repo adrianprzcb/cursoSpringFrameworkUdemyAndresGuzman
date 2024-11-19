@@ -37,8 +37,16 @@ public class RequestParamController {
         @GetMapping("/request")
         public ParamMixDto request(HttpServletRequest request){
             ParamMixDto params = new ParamMixDto();
+
+            Integer code = 0;
             params.setMessage(request.getParameter("message"));
-            params.setCode(Integer.parseInt(request.getParameter("code")));
+            try{
+               code = Integer.parseInt(request.getParameter("code"));
+
+            }catch(NumberFormatException e){
+
+            }
+            params.setCode(code);
             return params;
         }
     }
