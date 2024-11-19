@@ -10,9 +10,10 @@ public class ProductRepository {
 
     public ProductRepository() {
         this.data = List.of(
-            new Product(1L, "Product 1", 100.0),
-            new Product(2L, "Product 2", 200.0),
-            new Product(3L, "Product 3", 300.0)
+            new Product(1L, "Product 1", 100L),
+            new Product(2L, "Product 2", 200L),
+            new Product(3L, "Product 3", 300L),
+            new Product(4L, "Product 4", 400L)
         );
     }
 
