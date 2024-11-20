@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import jakarta.annotation.PostConstruct;
+
 @Component
 public class Invoice {
 
@@ -18,6 +20,20 @@ public class Invoice {
     @Autowired
     private List<Item> items;
 
+    @PostConstruct
+    public void init(){
+        System.out.println("Creando el componente de la factura");
+        client.setName(client.getName().concat(" pepe"));
+        System.out.println(client.getName());
+        description = description.concat(" del cliente: ").concat(client.getName()).concat(" ").concat(client.getLastname());
+    }
+
+    public Invoice(){
+        System.out.println("Creando el componente de la factura");
+        System.out.println(client);
+    
+
+    }
 
     public Client getClient() {
         return client;
