@@ -3,9 +3,12 @@ package com.adrian.springbootdi.repositories;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 import com.adrian.springbootdi.models.Product;
 
+@SessionScope
 @Repository("productList")
 public class ProductRepositoryImpl implements ProductRepository {
 
