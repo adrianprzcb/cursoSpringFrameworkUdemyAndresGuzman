@@ -8,7 +8,7 @@ import org.springframework.web.context.annotation.SessionScope;
 
 import com.adrian.springbootdi.models.Product;
 
-@SessionScope
+//@SessionScope
 @Repository("productList")
 public class ProductRepositoryImpl implements ProductRepository {
 
