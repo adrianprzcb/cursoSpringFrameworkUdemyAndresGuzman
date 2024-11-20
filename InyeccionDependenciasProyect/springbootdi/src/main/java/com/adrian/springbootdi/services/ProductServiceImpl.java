@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.adrian.springbootdi.models.Product;
-import com.adrian.springbootdi.repositories.ProductRepository;
+import com.adrian.springbootdi.repositories.ProductRepositoryImpl;
 
-public class ProductService {
+public class ProductServiceImpl {
 
-    private ProductRepository repository = new ProductRepository();
+    private ProductRepositoryImpl repository = new ProductRepositoryImpl();
 
     public List<Product> findAll(){
         return repository.findAll().stream().map(p -> {

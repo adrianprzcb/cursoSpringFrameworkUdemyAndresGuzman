@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.adrian.springbootdi.models.Product;
 
-public class ProductRepository {
+public class ProductRepositoryImpl {
 
     List<Product> data;
 
-    public ProductRepository() {
+    public ProductRepositoryImpl() {
         this.data = List.of(
             new Product(1L, "Product 1", 100L),
             new Product(2L, "Product 2", 200L),
