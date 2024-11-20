@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import com.adrian.springbootdi.models.Product;
 import com.adrian.springbootdi.repositories.ProductRepositoryImpl;
 
-public class ProductServiceImpl {
+public class ProductServiceImpl implements ProductService {
 
     private ProductRepositoryImpl repository = new ProductRepositoryImpl();
 

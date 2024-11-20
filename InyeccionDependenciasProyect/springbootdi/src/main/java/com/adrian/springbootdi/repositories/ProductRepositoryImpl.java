@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.adrian.springbootdi.models.Product;
 
-public class ProductRepositoryImpl {
+public class ProductRepositoryImpl implements ProductRepository {
 
     List<Product> data;
 
