@@ -11,13 +11,13 @@ import com.adrian.ejemplofactura.models.Item;
 import com.adrian.ejemplofactura.models.Product;
 
 @Configuration
-@PropertySource("classpath:data.properties")
+@PropertySource(value ="classpath:data.properties", encoding = "UTF-8")
 public class AppConfig {
 
     @Bean
     List<Item> itemsInvoice(){
-        Product p1 = new Product("Laptop", "1500");
-        Product p2 = new Product("Mouse", "20");
+        Product p1 = new Product("Laptop", 1500);
+        Product p2 = new Product("Mouse", 20);
       return Arrays.asList(new Item(p1, 2), new Item(p2, 4));
     }
     

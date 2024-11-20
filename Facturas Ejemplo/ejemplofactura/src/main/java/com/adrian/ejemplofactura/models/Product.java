@@ -3,7 +3,7 @@ package com.adrian.ejemplofactura.models;
 
 public class Product {
 
-    public Product(String name, String price) {
+    public Product(String name, Integer price) {
         this.name = name;
         this.price = price;
     }
@@ -12,7 +12,7 @@ public class Product {
     
     }
     private String name;
-    private String price;
+    private Integer price;
 
     public String getName() {
         return name;
@@ -20,10 +20,10 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
