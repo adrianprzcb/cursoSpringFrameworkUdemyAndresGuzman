@@ -1,9 +1,16 @@
 package com.adrian.ejemplofactura.models;
 
-import org.springframework.stereotype.Component;
 
 public class Product {
 
+    public Product(String name, String price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Product() {
+    
+    }
     private String name;
     private String price;
 
