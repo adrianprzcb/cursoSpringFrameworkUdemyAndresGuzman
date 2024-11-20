@@ -4,17 +4,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.adrian.springbootdi.models.Product;
-import com.adrian.springbootdi.repositories.ProductRepositoryImpl;
+import com.adrian.springbootdi.repositories.ProductRepository;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepositoryImpl repository;
+    private ProductRepository repository;
 
     public List<Product> findAll(){
         return repository.findAll().stream().map(p -> {
