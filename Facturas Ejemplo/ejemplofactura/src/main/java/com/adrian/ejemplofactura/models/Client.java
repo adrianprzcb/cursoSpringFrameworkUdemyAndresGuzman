@@ -1,12 +1,15 @@
 package com.adrian.ejemplofactura.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Client {
 
     private String name;
     private String lastname;
 
 
-    
+
     public String getName() {
         return name;
     }

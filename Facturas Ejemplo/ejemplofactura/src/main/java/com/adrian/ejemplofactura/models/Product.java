@@ -1,10 +1,12 @@
 package com.adrian.ejemplofactura.models;
 
+import org.springframework.stereotype.Component;
+
 public class Product {
 
     private String name;
     private String price;
-    
+
     public String getName() {
         return name;
     }
