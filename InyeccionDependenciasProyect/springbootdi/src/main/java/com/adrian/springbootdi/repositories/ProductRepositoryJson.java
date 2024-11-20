@@ -18,7 +18,7 @@ public class ProductRepositoryJson implements ProductRepository{
         Resource resource = new ClassPathResource("json/products.json");
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            list = Arrays.asList(objectMapper.readValue(resource.getFile(), Product[].class));
+            list = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Product[].class));
         } catch (IOException e) {
             e.printStackTrace();
         }
