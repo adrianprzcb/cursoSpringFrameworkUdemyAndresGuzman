@@ -2,8 +2,11 @@ package com.adrian.springbootdi.repositories;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.adrian.springbootdi.models.Product;
 
+@Component
 public class ProductRepositoryImpl implements ProductRepository {
 
     List<Product> data;

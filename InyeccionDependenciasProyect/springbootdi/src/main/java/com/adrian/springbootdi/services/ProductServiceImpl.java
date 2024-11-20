@@ -3,12 +3,17 @@ package com.adrian.springbootdi.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.adrian.springbootdi.models.Product;
 import com.adrian.springbootdi.repositories.ProductRepositoryImpl;
 
+@Component
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepositoryImpl repository = new ProductRepositoryImpl();
+    @Autowired
+    private ProductRepositoryImpl repository;
 
     public List<Product> findAll(){
         return repository.findAll().stream().map(p -> {
