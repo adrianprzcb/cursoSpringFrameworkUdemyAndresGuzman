@@ -12,8 +12,13 @@ import com.adrian.springbootdi.repositories.ProductRepository;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
+    
     private ProductRepository repository;
+
+
+    public ProductServiceImpl(ProductRepository repository) {
+        this.repository = repository;
+    }
 
     public List<Product> findAll(){
         return repository.findAll().stream().map(p -> {
