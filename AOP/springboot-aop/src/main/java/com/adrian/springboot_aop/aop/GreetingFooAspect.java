@@ -23,7 +23,7 @@ public class GreetingFooAspect {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
 
-      @Before("execution(* com.adrian.springboot_aop.services.GreetingService.*(..))")
+      @Before("GreetingServicePointcuts.greetingFooLoggerPointCut")
     public void loggerBefore(JoinPoint joinPoint){
 
         String method = joinPoint.getSignature().getName();
