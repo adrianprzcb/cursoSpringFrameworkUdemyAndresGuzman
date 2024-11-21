@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
+import com.adrian.springboot_errors.exceptions.UserNotFoundException;
 import com.adrian.springboot_errors.models.Error;
 
 import io.micrometer.core.ipc.http.HttpSender.Response;
@@ -33,7 +34,8 @@ public class HandlerExceptionController {
         return error;
     }
 
-    @ExceptionHandler({NullPointerException.class, HttpMessageNotWritableException.class})
+    @ExceptionHandler({NullPointerException.class, HttpMessageNotWritableException.class,
+    UserNotFoundException.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Map<String, Object> userNotFoundException(Exception e){
         Map<String, Object> error = new HashMap<>();
