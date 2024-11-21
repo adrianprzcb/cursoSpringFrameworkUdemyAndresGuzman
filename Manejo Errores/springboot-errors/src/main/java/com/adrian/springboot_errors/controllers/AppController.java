@@ -37,7 +37,7 @@ public class AppController {
             return ResponseEntity.notFound().build();
         }
        // System.out.println(user.getLastname());
-       return ResponseEntity.ok(optionalUser.get());
+       return ResponseEntity.ok(optionalUser.orElseThrow());
     }
 
 
