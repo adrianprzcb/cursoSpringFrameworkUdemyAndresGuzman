@@ -3,7 +3,6 @@ package com.adrian.springboot_errors.controllers;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,14 +29,12 @@ public class AppController {
     }
 
     @GetMapping("/show/{id}")
-    public ResponseEntity<?> show(@PathVariable(name = "id") Long id){
-     //   User user = service.findById(id).orElseThrow(() -> new UserNotFoundException("Error el usuario no existe"));
-        Optional<User> optionalUser = service.findById(id);
-        if (optionalUser.isEmpty()){
-            return ResponseEntity.notFound().build();
-        }
-       // System.out.println(user.getLastname());
-       return ResponseEntity.ok(optionalUser.orElseThrow());
+    public User show(@PathVariable(name = "id") Long id){
+        User user = service.findById(id).orElseThrow(() -> new UserNotFoundException("Error el usuario no existe"));
+        //Optional<User> optionalUser = service.findById(id);
+       
+        System.out.println(user.getLastname());
+       return user;
     }
 
 
