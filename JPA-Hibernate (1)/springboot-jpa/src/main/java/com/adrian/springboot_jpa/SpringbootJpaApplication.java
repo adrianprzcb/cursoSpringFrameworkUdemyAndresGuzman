@@ -42,6 +42,12 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		List<Object[]> personsRegs = repository.findAllMixPerson();
 		personsRegs.forEach(reg ->{
 			System.out.println("programmingLanguage= " + reg[1] + ", person= " + reg[0]);
+
+
+			System.out.println("==============Consulta instancia personalizada================");
+
+			List<Person> persons = repository.findAllObjectPersonPersonalized();
+			persons.forEach(System.out::println);
 		});
 		
 	}
