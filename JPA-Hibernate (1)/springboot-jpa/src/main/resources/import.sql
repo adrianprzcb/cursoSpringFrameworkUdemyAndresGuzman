@@ -7,3 +7,5 @@ INSERT INTO persons (name, lastname, programming_language) VALUES ('Charlie', 'B
 INSERT INTO persons (name, lastname, programming_language) VALUES ('Diana', 'Martinez', 'C++');
 
 INSERT INTO persons (name, lastname, programming_language) VALUES ('Ethan', 'Clark', 'Ruby');
+
+INSERT INTO persons (name, lastname, programming_language) VALUES ('Adrian', 'Clark', 'Java');
