@@ -1,6 +1,7 @@
 package com.adrian.springboot_jpa;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,7 +23,25 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		//List<Person> persons = (List<Person>) repository.findAll();
+	//list();
+	findOne();
+	}
+
+	public void findOne(){
+		/*Person person = null;
+		Optional<Person> optionalPerson = repository.findById(9L);
+		if(optionalPerson.isPresent()){
+			person = optionalPerson.get();
+			System.out.println(person);
+		}else{
+			System.out.println("El usuario con id no existe.");
+		}*/
+		repository.findById(1L).ifPresent(System.out::println);
+	}
+
+
+	public void list(){
+	//List<Person> persons = (List<Person>) repository.findAll();
 		//List<Person> persons = (List<Person>) repository.findByProgrammingLanguage("Java");
 		//List<Person> persons = (List<Person>) repository.buscarByProgrammingLanguage("Java", "Adrian");
 		List<Person> persons = (List<Person>) repository.findByProgrammingLanguageAndName("Java", "Adrian");
