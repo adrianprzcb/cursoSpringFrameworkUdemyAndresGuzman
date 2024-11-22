@@ -15,7 +15,7 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 
     List<Person> findByIdBetweenOrderByIdDesc(Long c1, Long c2);
 
-    List<Person> findByNameBetween(String c1, String c2);
+    List<Person> findByNameBetweenOrderByNameDescLastnameAsc(String c1, String c2);
 
 
     @Query("select p from Person p where p.name between ?1 and ?2 order by p.name")
