@@ -26,7 +26,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		personalizedQueriesDistinct();
+		//personalizedQueriesDistinct();
 		//personalizedQueries2();
 		//personalizedQueries();
 		//delete2();
@@ -34,6 +34,15 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 	//create();
 	//list();
 	//findOne();
+	}
+
+	@Transactional(readOnly = true)
+	public void personalizedQueriesConcatUpperAndLowerCase(){
+
+		System.out.println("=====Consulta nombres y apellidos");
+		List<String> fullNames = repository.findAllFullNameConcat();
+		fullNames.forEach(System.out::println);
+
 	}
 
 

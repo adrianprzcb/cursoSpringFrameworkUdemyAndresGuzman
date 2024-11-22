@@ -12,6 +12,9 @@ import java.util.Optional;
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
+    @Query("select CONCAT(p.name, ' ', p.lastname) from Person p")
+    List<String> findAllFullNameConcat();
+
 
     @Query("select p.name from Person p")
     List<String> findAllNames();
