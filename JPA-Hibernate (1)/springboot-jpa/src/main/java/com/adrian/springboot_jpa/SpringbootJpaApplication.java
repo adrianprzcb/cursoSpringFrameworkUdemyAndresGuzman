@@ -38,12 +38,15 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		Long id = scanner.nextLong();
 
 		Optional<Person> optionalPerson = repository.findById(id);
-		optionalPerson.ifPresent(person -> {
+
+		optionalPerson.ifPresentOrElse(person -> {
 			System.out.println("Ingrese el lenguaje de programación:");
 			String programmingLanguage = scanner.next();
 			person.setProgrammingLanguage(programmingLanguage);
 			Person personDb = repository.save(person);
 			System.out.println(personDb);
+		}, () -> {
+			System.out.println("La persona con el id ingresado no existe.");
 		});
 	}
 
