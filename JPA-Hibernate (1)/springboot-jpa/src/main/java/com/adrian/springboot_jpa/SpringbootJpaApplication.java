@@ -25,11 +25,24 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		update();
+		delete();
+	//update();
 	//create();
 	//list();
 	//findOne();
 	}
+
+
+	@Transactional
+	public void delete(){
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ingrese el id a eliminar");
+		Long id = scanner.nextLong();
+		repository.deleteById(id);
+		list();
+
+	}
+
 
 	@Transactional
 	public void update(){
@@ -92,10 +105,10 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Transactional(readOnly = true)
 	public void list(){
-	//List<Person> persons = (List<Person>) repository.findAll();
+	List<Person> persons = (List<Person>) repository.findAll();
 		//List<Person> persons = (List<Person>) repository.findByProgrammingLanguage("Java");
 		//List<Person> persons = (List<Person>) repository.buscarByProgrammingLanguage("Java", "Adrian");
-		List<Person> persons = (List<Person>) repository.findByProgrammingLanguageAndName("Java", "Adrian");
+		//List<Person> persons = (List<Person>) repository.findByProgrammingLanguageAndName("Java", "Adrian");
 
 		persons.stream().forEach(person -> System.out.println(person));
 
