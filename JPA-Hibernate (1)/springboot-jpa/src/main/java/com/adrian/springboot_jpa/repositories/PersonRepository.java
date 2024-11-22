@@ -11,6 +11,10 @@ import java.util.Optional;
 
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
+    
+
+    @Query("select p.name from Person p where p.id=?1")
+    String getNameById(Long id);
 
 
     @Query("select p from Person p where p.id=?1")
@@ -30,7 +34,7 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 
     List<Person> findByProgrammingLanguageAndName(String programmingLanguage, String name);
 
-    
+
     @Query("select p from Person p where p.programmingLanguage=?1 and p.name=?2")
     List<Person> buscarByProgrammingLanguage(String programmingLanguage, String name);
 
