@@ -26,7 +26,8 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		QueriesFunctionAggregations();
+		subQueries();
+		//QueriesFunctionAggregations();
 		//personalizedQueriesBetween();
 		//personalizedQueriesConcatUpperAndLowerCase();
 		//personalizedQueriesDistinct();
@@ -37,6 +38,21 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 	//create();
 	//list();
 	//findOne();
+	}
+
+	@Transactional(readOnly = true)
+	public void subQueries(){
+		
+		System.out.println("=====Consulta de nombres más cortos");
+		List<Object[]> personsShorterName = repository.getShorterName();
+		personsShorterName.forEach(person -> {
+			System.out.println("Nombre: " + person[0] + ", Longitud: " + person[1]);
+		});
+
+
+		System.out.println("=====Consulta de última persona registrada");
+		Optional<Person> lastPerson = repository.getLastRegistration();
+		lastPerson.ifPresent(System.out::println);
 	}
 
 	@Transactional(readOnly = true)
@@ -63,7 +79,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		System.out.println("Suma de ids: " + resume[2]);
 		System.out.println("Promedio de longitud de nombres: " + resume[3]);
 		System.out.println("Total de personas: " + resume[4]);
-		
+
 
 	}
 
