@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.adrian.springboot_jpa.dto.PersonDto;
 import com.adrian.springboot_jpa.entities.Person;
 import com.adrian.springboot_jpa.repositories.PersonRepository;
 
@@ -49,7 +50,11 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 			List<Person> persons = repository.findAllObjectPersonPersonalized();
 			persons.forEach(System.out::println);
 		});
-		
+
+
+		System.out.println("==============DTO DTO DTOConsulta por persona y lenguaje de programación================");
+		List<PersonDto> personsDto = repository.findAllObjectPersonDto();
+		personsDto.forEach(System.out::println);	
 	}
 
 	@Transactional(readOnly = true)
