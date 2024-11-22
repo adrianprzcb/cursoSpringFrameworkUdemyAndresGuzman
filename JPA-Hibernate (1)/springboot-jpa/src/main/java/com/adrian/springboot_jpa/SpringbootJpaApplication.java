@@ -25,11 +25,24 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		delete();
+		delete2();
 	//update();
 	//create();
 	//list();
 	//findOne();
+	}
+
+	@Transactional
+	public void delete2(){
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ingrese el id a eliminar");
+		Long id = scanner.nextLong();
+
+		Optional<Person> optionalPerson = repository.findById(id);
+		optionalPerson.ifPresentOrElse(person -> repository.delete(person), () -> System.out.println("No existe la persona con ese id: " + id));
+		// o (repository::delete , () -> )
+		list();
+
 	}
 
 
