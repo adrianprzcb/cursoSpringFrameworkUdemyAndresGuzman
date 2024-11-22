@@ -45,7 +45,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		System.out.println(fullName);
 
 		System.out.println("Consulta por campos personalizado");
-		Object[] personReg = repository.obtenerPersonDataFullById(id);
+		Object[] personReg = (Object[]) repository.obtenerPersonDataFullById(id);
 		System.out.println("Id: " + personReg[0] + " Nombre: " + personReg[1] + " LastName: " + personReg[2] + " Lenguaje: " + personReg[3]);
 
 		System.out.println("Consulta por campos personalizado LISTA");
@@ -53,7 +53,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		persons.stream().forEach(person -> {
 			System.out.println("Id: " + person[0] + " Nombre: " + person[1] + " LastName: " + person[2] + " Lenguaje: " + person[3]);
 		});
-		
+
 		scanner.close();
 	}
 
