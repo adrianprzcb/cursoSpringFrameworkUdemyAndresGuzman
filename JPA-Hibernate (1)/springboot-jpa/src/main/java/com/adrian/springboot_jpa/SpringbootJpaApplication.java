@@ -26,13 +26,24 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		personalizedQueries2();
+		personalizedQueriesDistinct();
+		//personalizedQueries2();
 		//personalizedQueries();
 		//delete2();
 	//update();
 	//create();
 	//list();
 	//findOne();
+	}
+
+
+	@Transactional(readOnly = true)
+	public void personalizedQueriesDistinct(){
+
+		System.out.println("===========Consulta con nombres de personas");
+
+		List<String> names = repository.findAllNames();
+		names.forEach(System.out::println);
 	}
 
 	

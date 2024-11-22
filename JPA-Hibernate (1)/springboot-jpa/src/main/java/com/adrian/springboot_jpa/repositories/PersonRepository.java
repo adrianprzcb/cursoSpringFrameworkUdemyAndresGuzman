@@ -6,7 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.adrian.springboot_jpa.dto.PersonDto;
 import com.adrian.springboot_jpa.entities.Person;
 
-import java.lang.StackWalker.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,9 +13,8 @@ import java.util.Optional;
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
 
-    @Query("select p.nombre from Person p")
+    @Query("select p.name from Person p")
     List<String> findAllNames();
-
 
     @Query("select new com.adrian.springboot_jpa.dto.PersonDto(p.name, p.lastname) from Person p")
     List<PersonDto> findAllObjectPersonDto();
