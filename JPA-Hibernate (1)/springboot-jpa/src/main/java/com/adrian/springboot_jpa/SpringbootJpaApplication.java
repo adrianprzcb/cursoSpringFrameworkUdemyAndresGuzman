@@ -45,6 +45,13 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		System.out.println("Total de personas: " + repository.totalPerson());
 		System.out.println("Id mínimo: " + repository.minId());
 		System.out.println("Id máximo: " + repository.maxId());
+
+		System.out.println("=====Consulta de nombres y longitud de nombres");
+		List<Object[]> personsNameLength = repository.getPersonNameLength();
+		personsNameLength.forEach(person -> {
+			System.out.println("Nombre: " + person[0] + ", Longitud: " + person[1]);
+		});
+
 	}
 
 	@Transactional(readOnly = true)
