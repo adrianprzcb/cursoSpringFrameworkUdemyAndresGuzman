@@ -41,7 +41,8 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		System.out.println("Ingrese el id para el nombre:");
 		Long id = scanner.nextLong();
 		String name = repository.getNameById(id);
-		System.out.println(name);
+		String fullName = repository.getFullNameById(id);
+		System.out.println(fullName);
 		scanner.close();
 	}
 
