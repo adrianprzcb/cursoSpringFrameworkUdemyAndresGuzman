@@ -1,5 +1,6 @@
 package com.adrian.springboot_jpa;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -56,7 +57,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 
 		System.out.println("=====Consulta con where in");
-		List<Person> persons = repository.getPersonsById();
+		List<Person> persons = repository.getPersonsByIds(Arrays.asList(1L, 3L, 5L));
 		persons.forEach(System.out::println);
 	}
 
