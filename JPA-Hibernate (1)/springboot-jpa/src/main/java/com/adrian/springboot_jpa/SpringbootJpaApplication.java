@@ -25,12 +25,19 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		personalizedQueries();
+		personalizedQueries2();
+		//personalizedQueries();
 		//delete2();
 	//update();
 	//create();
 	//list();
 	//findOne();
+	}
+
+	
+	@Transactional(readOnly = true)
+	public void personalizedQueries2(){
+		
 	}
 
 	@Transactional(readOnly = true)

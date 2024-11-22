@@ -40,6 +40,8 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
     @Query("select p from Person p where p.programmingLanguage=?1 and p.name=?2")
     List<Person> buscarByProgrammingLanguage(String programmingLanguage, String name);
 
+    @Query("select p, p.programmingLanguage from Person p")
+    List<Object[]> findAllMixPerson();
 
     @Query("select p.name, p.programmingLanguage from Person p")
     List<Object[]> obtenerPersonData();
