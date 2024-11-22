@@ -36,8 +36,13 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		}else{
 			System.out.println("El usuario con id no existe.");
 		}*/
+
+		//repository.findById(1L).ifPresent(System.out::println);
 		
-		repository.findById(1L).ifPresent(System.out::println);
+		//repository.findOneLikeName("Adr").ifPresent(System.out::println);
+
+		repository.findByName("Adrian").ifPresent(System.out::println);
+
 	}
 
 
