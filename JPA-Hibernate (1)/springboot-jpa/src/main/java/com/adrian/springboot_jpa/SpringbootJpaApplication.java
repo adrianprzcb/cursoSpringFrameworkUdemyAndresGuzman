@@ -37,6 +37,12 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 	
 	@Transactional(readOnly = true)
 	public void personalizedQueries2(){
+
+		System.out.println("==============Consulta por persona y lenguaje de programación================");
+		List<Object[]> personsRegs = repository.findAllMixPerson();
+		personsRegs.forEach(reg ->{
+			System.out.println("programmingLanguage= " + reg[1] + ", person= " + reg[0]);
+		});
 		
 	}
 

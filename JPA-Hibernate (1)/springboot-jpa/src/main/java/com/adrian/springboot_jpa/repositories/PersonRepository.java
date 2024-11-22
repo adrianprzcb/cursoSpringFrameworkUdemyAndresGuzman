@@ -12,6 +12,8 @@ import java.util.Optional;
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
     
+    @Query("select new Person(p.name, p.lastname) from Person p")
+    List<Person> findAllClassPersons();
 
     @Query("select p.name from Person p where p.id=?1")
     String getNameById(Long id);
