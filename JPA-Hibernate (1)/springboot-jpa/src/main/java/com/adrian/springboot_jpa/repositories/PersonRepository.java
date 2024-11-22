@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
 
-    List<Person> findByIdBetween(Long c1, Long c2);
+    List<Person> findByIdBetweenOrderByIdDesc(Long c1, Long c2);
 
     List<Person> findByNameBetween(String c1, String c2);
 
