@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
     
-    @Query("select new PersonDto(p.name, p.lastname) from Person p")
+    @Query("select new com.adrian.springboot_jpa.dto.PersonDto(p.name, p.lastname) from Person p")
     List<PersonDto> findAllObjectPersonDto();
 
     @Query("select new Person(p.name, p.lastname) from Person p")

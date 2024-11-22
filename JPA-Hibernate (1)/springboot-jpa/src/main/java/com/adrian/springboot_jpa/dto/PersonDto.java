@@ -25,5 +25,10 @@ public class PersonDto {
             this.lastname = lastname;
         }
 
+        @Override
+        public String toString() {
+            return "PersonDto [name=" + name + ", lastname=" + lastname + "]";
+        }
+
         
 }
