@@ -53,6 +53,11 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		System.out.println("=====Consulta de última persona registrada");
 		Optional<Person> lastPerson = repository.getLastRegistration();
 		lastPerson.ifPresent(System.out::println);
+
+
+		System.out.println("=====Consulta con where in");
+		List<Person> persons = repository.getPersonsById();
+		persons.forEach(System.out::println);
 	}
 
 	@Transactional(readOnly = true)
