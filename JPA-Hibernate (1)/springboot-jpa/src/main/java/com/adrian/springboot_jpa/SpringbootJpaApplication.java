@@ -57,6 +57,18 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		System.out.println("=====Consulta entre nombre A y H");
 		List<Person> personsNameBetween = repository.findByNameBetweenOrderByNameDescLastnameAsc("A" , "E");
 		personsNameBetween.forEach(System.out::println);
+
+
+
+		System.out.println("=====Consulta all ordered");
+		List<Person> personsOrder = repository.getAllOrdered();
+		personsOrder.forEach(System.out::println);
+
+		System.out.println("=== consulta order y desc y asc");
+		//findAllByOrderByNameAscLastnameDesc
+		List<Person> personsOrderDesc = repository.findAllByOrderByNameAscLastnameDesc();
+		personsOrderDesc.forEach(System.out::println);
+
 	}
 
 

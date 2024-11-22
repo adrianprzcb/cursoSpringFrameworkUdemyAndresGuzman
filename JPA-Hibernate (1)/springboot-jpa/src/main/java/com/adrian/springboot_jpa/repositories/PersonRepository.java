@@ -12,6 +12,10 @@ import java.util.Optional;
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
+    @Query("select p from Person p order by p.name , p.lastname desc")
+    List<Person> getAllOrdered();
+
+    List<Person> findAllByOrderByNameAscLastnameDesc();
 
     List<Person> findByIdBetweenOrderByIdDesc(Long c1, Long c2);
 
