@@ -15,7 +15,11 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
     @Query("select p.name, length(p.name) from Person p")
     public List<Object[]> getPersonNameLength();
     
-    
+    @Query("select min(length(p.name)) from Person p")
+    public Integer getMinLengthName();
+
+    @Query("select max(length(p.name)) from Person p")
+    public Integer getMaxLengthName();
     
     @Query("select count(p) from Person p")
     Long totalPerson();
