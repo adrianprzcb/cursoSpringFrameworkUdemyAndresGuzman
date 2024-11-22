@@ -44,6 +44,10 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 		List<String> names = repository.findAllNames();
 		names.forEach(System.out::println);
+
+		System.out.println("===========Consulta con nombres de personas distintos");
+		List<String> namesDistinct = repository.findAllNamesDistinct();
+		namesDistinct.forEach(System.out::println);
 	}
 
 	
