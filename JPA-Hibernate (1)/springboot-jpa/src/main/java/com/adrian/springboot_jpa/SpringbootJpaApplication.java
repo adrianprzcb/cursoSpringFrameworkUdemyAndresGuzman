@@ -26,7 +26,8 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		personalizedQueriesBetween();
+		QueriesFunctionAggregations();
+		//personalizedQueriesBetween();
 		//personalizedQueriesConcatUpperAndLowerCase();
 		//personalizedQueriesDistinct();
 		//personalizedQueries2();
@@ -38,6 +39,13 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 	//findOne();
 	}
 
+	@Transactional(readOnly = true)
+	public void QueriesFunctionAggregations(){
+
+		System.out.println("Total de personas: " + repository.totalPerson());
+		System.out.println("Id mínimo: " + repository.minId());
+		System.out.println("Id máximo: " + repository.maxId());
+	}
 
 	@Transactional(readOnly = true)
 	public void personalizedQueriesBetween(){
