@@ -48,6 +48,11 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		System.out.println("===========Consulta con nombres de personas distintos");
 		List<String> namesDistinct = repository.findAllNamesDistinct();
 		namesDistinct.forEach(System.out::println);
+
+		System.out.println("======Consulta lenguajes de programación distintos======");
+		List<String> programmingLanguages = repository.findAllProgrammingLanguagesDistinct();
+		programmingLanguages.forEach(System.out::println);
+		System.out.println("Total lenguajes de programación distintos: " + repository.findAllProgrammingLanguagesDistinctCount());
 	}
 
 	
@@ -64,6 +69,9 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 			List<Person> persons = repository.findAllObjectPersonPersonalized();
 			persons.forEach(System.out::println);
+
+
+	
 		});
 
 
