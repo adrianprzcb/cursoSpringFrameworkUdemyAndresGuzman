@@ -1,5 +1,6 @@
 package com.adrian.springboot_jparelationships;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,26 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		OneToMany();
+		//OneToMany();
+		OneToManyFindById();
 		
 	}
+
+
+	@Transactional
+	private void OneToManyFindById() {
+		Optional<Client> optionalClient = clientRepository.findById(2L);
+		optionalClient.ifPresent(client -> {
+			Adress adress = new Adress("El verjel" , 1234);
+			Adress adress2 = new Adress("Vasco de Gama" , 13);
+
+			client.setAdresses(Arrays.asList(adress, adress2));
+
+			clientRepository.save(client);
+			System.out.println(client);
+		});
+	}
+
 
 	@Transactional
 	private void OneToMany() {
