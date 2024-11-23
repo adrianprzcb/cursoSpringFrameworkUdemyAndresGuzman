@@ -13,7 +13,10 @@ import com.adrian.springboot_jparelationships.entities.Client;
 public interface ClientRepository extends CrudRepository<Client, Long> {
 
     
-    @Query("select c from Client c join fetch c.addresses")
-    Optional<Client> findOne(Long id);
+    @Query("select c from Client c join fetch c.addresses where c.id = ?1")
+    Optional<Client> findOneWithAddresses(Long id);
+
+    @Query("select c from Client c join fetch c.invoices where c.id = ?1")
+    Optional<Client> findOneWithInvoice(Long id);
      
 } 

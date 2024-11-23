@@ -35,14 +35,14 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		OneToMany();
-		OneToManyInvoiceBidireccional();
+		OneToManyInvoiceBidireccionalFindById();
 		
 	}
 
 	@Transactional
 	private void OneToManyInvoiceBidireccionalFindById() {
 
-		Optional<Client> optionalClient = clientRepository.findById(1L);
+		Optional<Client> optionalClient = clientRepository.findOneWithInvoice(1L);
 
 		optionalClient.ifPresent(client ->{
 			Invoice invoice = new Invoice("Compras de casa", 5000L);
@@ -90,7 +90,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 			System.out.println(client);
 
 
-			Optional<Client> optionalClient2 = clientRepository.findOne(2L);
+			Optional<Client> optionalClient2 = clientRepository.findOneWithAddresses(2L);
 			optionalClient2.ifPresent(c ->
 			{
 				c.getAddresses().remove(adress2);
