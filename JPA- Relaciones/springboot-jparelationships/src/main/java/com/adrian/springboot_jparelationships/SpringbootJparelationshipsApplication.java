@@ -1,7 +1,9 @@
 package com.adrian.springboot_jparelationships;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -84,7 +86,10 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 			Address adress = new Address("El verjel" , 1234);
 			Address adress2 = new Address("Vasco de Gama" , 13);
 
-			client.setAddresses(Arrays.asList(adress, adress2));
+			Set<Address> addresses = new HashSet<>();
+			addresses.add(adress);
+			addresses.add(adress2);
+			client.setAddresses(addresses);
 
 			clientRepository.save(client);
 			System.out.println(client);
@@ -134,7 +139,10 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 			Address adress = new Address("El verjel" , 1234);
 			Address adress2 = new Address("Vasco de Gama" , 13);
 
-			client.setAddresses(Arrays.asList(adress, adress2));
+			Set<Address> addresses = new HashSet<>();
+			addresses.add(adress);
+			addresses.add(adress2);
+			client.setAddresses(addresses);
 
 			clientRepository.save(client);
 			System.out.println(client);
