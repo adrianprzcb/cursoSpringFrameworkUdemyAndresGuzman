@@ -91,7 +91,7 @@ public class Client {
     }
 
     public Client addInvoice(Invoice invoice) {
-        this.invoices.add(invoice);
+        invoices.add(invoice);
         invoice.setClient(this);
         return this;
     }
