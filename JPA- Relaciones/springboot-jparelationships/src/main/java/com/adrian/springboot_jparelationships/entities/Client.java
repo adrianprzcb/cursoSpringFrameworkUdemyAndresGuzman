@@ -32,7 +32,7 @@ public class Client {
     joinColumns = @JoinColumn(name = "id_cliente"), 
     inverseJoinColumns = @JoinColumn(name = "id_direcciones"),
     uniqueConstraints = @UniqueConstraint(columnNames = {"id_direcciones"}))
-    private List<Adress> adresses;
+    private List<Address> adresses;
     
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
     private List<Invoice> invoices;
@@ -74,11 +74,11 @@ public class Client {
     }
 
 
-    public List<Adress> getAdresses() {
+    public List<Address> getAdresses() {
         return adresses;
     }
 
-    public void setAdresses(List<Adress> adresses) {
+    public void setAdresses(List<Address> adresses) {
         this.adresses = adresses;
     }
 

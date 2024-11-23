@@ -7,8 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "adresses")
-public class Adress {
+@Table(name = "addresses")
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +17,12 @@ public class Adress {
     private String street;
     private Integer number;
 
-    public Adress(String street, Integer number) {
+    public Address(String street, Integer number) {
         this.street = street;
         this.number = number;
     }
 
-    public Adress() {
+    public Address() {
     }
 
     public Long getId() {
@@ -51,7 +51,7 @@ public class Adress {
 
     @Override
     public String toString() {
-        return "Adress{" + "id=" + id + ", street=" + street + ", number=" + number + '}';
+        return "Address{" + "id=" + id + ", street=" + street + ", number=" + number + '}';
     }
 
     @Override
@@ -70,7 +70,7 @@ public class Adress {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Adress other = (Adress) obj;
+        Address other = (Address) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
