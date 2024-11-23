@@ -27,7 +27,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		subQueries();
+		//subQueries();
 		//QueriesFunctionAggregations();
 		//personalizedQueriesBetween();
 		//personalizedQueriesConcatUpperAndLowerCase();
@@ -35,7 +35,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 		//personalizedQueries2();
 		//personalizedQueries();
 		//delete2();
-	//update();
+	update();
 	//create();
 	//list();
 	//findOne();

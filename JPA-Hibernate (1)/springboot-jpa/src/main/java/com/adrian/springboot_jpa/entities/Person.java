@@ -46,11 +46,13 @@ public class Person {
 
     @PrePersist
     public void prePersist(){
+        this.createdAt = LocalDateTime.now();
         System.out.println("Before saving the object");
     }
 
     @PreUpdate
     public void preUpdate(){
+        this.updatedAt = LocalDateTime.now();
         System.out.println("Before updating the object");
     }
 
@@ -83,7 +85,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person [id=" + id + ", name=" + name + ", lastname=" + lastname + ", programmingLanguage="
-                + programmingLanguage + "]";
+                + programmingLanguage  + " -created at"+ createdAt + " -updated at" + updatedAt + "]";
     }
 
     
