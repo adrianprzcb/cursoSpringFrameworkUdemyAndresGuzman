@@ -12,6 +12,8 @@ import com.adrian.springboot_jparelationships.entities.Invoice;
 import com.adrian.springboot_jparelationships.repositories.ClientRepository;
 import com.adrian.springboot_jparelationships.repositories.InvoiceRepository;
 
+import jakarta.transaction.Transactional;
+
 @SpringBootApplication
 public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
@@ -33,6 +35,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		
 	}
 
+	@Transactional
 	private void ManyToOne() {
 		Client client = new Client("Adrian", "Gonzalez");
 		clientRepository.save(client);
@@ -43,6 +46,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		System.out.println("Invoice saved: " + invoiceDb);
 	}
 
+	@Transactional
 	private void ManyToOneFindByIdClient() {
 
 		Optional<Client> optionalClient = clientRepository.findById(1L);
