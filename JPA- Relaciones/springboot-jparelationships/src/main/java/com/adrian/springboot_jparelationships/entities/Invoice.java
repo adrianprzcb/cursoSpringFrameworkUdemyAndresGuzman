@@ -19,8 +19,8 @@ public class Invoice {
     private String description;
     private Long total;
 
+    @JoinColumn(name = "client_id") 
     @ManyToOne
-    @JoinColumn(name = "id_cliente_temp") 
     private Client client;
 
     public Invoice(String description, Long total) {

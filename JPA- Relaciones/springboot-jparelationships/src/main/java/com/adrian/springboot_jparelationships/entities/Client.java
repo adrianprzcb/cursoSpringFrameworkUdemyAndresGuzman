@@ -34,6 +34,9 @@ public class Client {
     uniqueConstraints = @UniqueConstraint(columnNames = {"id_direcciones"}))
     private List<Adress> adresses;
     
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
+    private List<Invoice> invoices;
+
     public Client() {
         adresses = new ArrayList<>();
     }
@@ -78,6 +81,16 @@ public class Client {
     public void setAdresses(List<Adress> adresses) {
         this.adresses = adresses;
     }
+
+    public void getInvoices(List<Invoice> invoices) {
+        this.invoices = invoices;
+    }
+
+    public void setInvoices(List<Invoice> invoices) {
+        this.invoices = invoices;
+    }
+
+
 
     @Override
     public String toString() {
