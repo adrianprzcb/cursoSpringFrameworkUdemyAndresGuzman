@@ -50,7 +50,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		System.out.println("Client saved: " + client);
 
 
-		Optional<Client> optionalClient = clientRepository.findById(3L);
+		Optional<Client> optionalClient = clientRepository.findById(4L);
 		optionalClient.ifPresent(c ->
 		{
 			c.getAdresses().remove(adress);
