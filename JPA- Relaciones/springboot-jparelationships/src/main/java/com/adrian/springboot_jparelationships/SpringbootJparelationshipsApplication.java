@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.adrian.springboot_jparelationships.entities.Adress;
 import com.adrian.springboot_jparelationships.entities.Client;
 import com.adrian.springboot_jparelationships.entities.Invoice;
 import com.adrian.springboot_jparelationships.repositories.ClientRepository;
@@ -31,8 +32,19 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		ManyToOneFindByIdClient();
+		OneToMany();
 		
+	}
+
+	@Transactional
+	private void OneToMany() {
+		Client client = new Client("Fran", "Moras");
+		Adress adress = new Adress("Calle 1", 123);
+		Adress adress2 = new Adress("Calle 2", 456);
+
+		client.getAdresses().add(adress);
+		client.getAdresses().add(adress2);
+		clientRepository.save(client);
 	}
 
 	@Transactional
