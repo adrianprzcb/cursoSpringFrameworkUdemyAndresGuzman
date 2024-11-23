@@ -39,6 +39,27 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		
 	}
 
+	@Transactional
+	private void OneToManyInvoiceBidireccionalFindById() {
+
+		Optional<Client> optionalClient = clientRepository.findById(1L);
+
+		optionalClient.ifPresent(client ->{
+			Invoice invoice = new Invoice("Compras de casa", 5000L);
+			Invoice invoice2 = new Invoice("Compras de oficina", 8000L);
+	
+			client.addInvoice(invoice).addInvoice(invoice2);
+	
+	
+			clientRepository.save(client);
+	
+			System.out.println("Client saved: " + client);
+		});
+
+	
+
+	}
+
 
 	@Transactional
 	private void OneToManyInvoiceBidireccional() {
@@ -55,7 +76,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	}
 
-/* 
+
 	@Transactional
 	private void removeAdressFindById() {
 		Optional<Client> optionalClient = clientRepository.findById(2L);
@@ -63,7 +84,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 			Address adress = new Address("El verjel" , 1234);
 			Address adress2 = new Address("Vasco de Gama" , 13);
 
-			client.setAdresses(Arrays.asList(adress, adress2));
+			client.setAddresses(Arrays.asList(adress, adress2));
 
 			clientRepository.save(client);
 			System.out.println(client);
@@ -72,14 +93,14 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 			Optional<Client> optionalClient2 = clientRepository.findOne(2L);
 			optionalClient2.ifPresent(c ->
 			{
-				c.getAdresses().remove(adress2);
+				c.getAddresses().remove(adress2);
 				clientRepository.save(c);
 				System.out.println(c);
 			});
 
 		});
 
-	}*/
+	}
 
 
 
@@ -89,8 +110,8 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		Address adress = new Address("Calle 1", 123);
 		Address adress2 = new Address("Calle 2", 456);
 
-		client.getAdresses().add(adress);
-		client.getAdresses().add(adress2);
+		client.getAddresses().add(adress);
+		client.getAddresses().add(adress2);
 		clientRepository.save(client);
 		System.out.println("Client saved: " + client);
 
@@ -98,7 +119,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		Optional<Client> optionalClient = clientRepository.findById(4L);
 		optionalClient.ifPresent(c ->
 		{
-			c.getAdresses().remove(adress);
+			c.getAddresses().remove(adress);
 			clientRepository.save(c);
 			System.out.println(c);
 		});
@@ -113,7 +134,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 			Address adress = new Address("El verjel" , 1234);
 			Address adress2 = new Address("Vasco de Gama" , 13);
 
-			client.setAdresses(Arrays.asList(adress, adress2));
+			client.setAddresses(Arrays.asList(adress, adress2));
 
 			clientRepository.save(client);
 			System.out.println(client);
@@ -127,8 +148,8 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		Address adress = new Address("Calle 1", 123);
 		Address adress2 = new Address("Calle 2", 456);
 
-		client.getAdresses().add(adress);
-		client.getAdresses().add(adress2);
+		client.getAddresses().add(adress);
+		client.getAddresses().add(adress2);
 		clientRepository.save(client);
 		System.out.println("Client saved: " + client);
 	}
