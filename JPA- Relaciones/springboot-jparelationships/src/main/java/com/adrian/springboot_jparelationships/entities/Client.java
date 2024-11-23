@@ -26,7 +26,7 @@ public class Client {
     private String name;
     private String lastname;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
     name="tbl_clientes_to_direcciones" , 
     joinColumns = @JoinColumn(name = "id_cliente"), 
