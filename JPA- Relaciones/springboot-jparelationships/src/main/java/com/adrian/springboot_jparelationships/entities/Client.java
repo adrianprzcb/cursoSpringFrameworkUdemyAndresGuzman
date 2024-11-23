@@ -39,6 +39,7 @@ public class Client {
 
     public Client() {
         adresses = new ArrayList<>();
+        invoices = new ArrayList<>();
     }
     
     public Client(String name, String lastname) {
