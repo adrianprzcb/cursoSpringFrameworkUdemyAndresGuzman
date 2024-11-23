@@ -61,9 +61,9 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		optionalClientDb.ifPresent(client -> {
 			Optional<Invoice> optionalInvoice = invoiceRepository.findById(2L);
 			optionalInvoice.ifPresent(invoice -> {
-				client.removeInvoice(invoice);
+				client.getInvoices().remove(invoice);
+				invoice.setClient(null);
 				clientRepository.save(client);
-				System.out.println("Client saved: " + client);
 			});
 		});
 
