@@ -42,7 +42,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 	@Transactional
 	private void OneToManyInvoiceBidireccionalFindById() {
 
-		Optional<Client> optionalClient = clientRepository.findOneWithInvoice(1L);
+		Optional<Client> optionalClient = clientRepository.findOne(1L);
 
 		optionalClient.ifPresent(client ->{
 			Invoice invoice = new Invoice("Compras de casa", 5000L);
