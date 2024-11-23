@@ -56,7 +56,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	}
 
-
+/* 
 	@Transactional
 	private void removeAdressFindById() {
 		Optional<Client> optionalClient = clientRepository.findById(2L);
@@ -80,9 +80,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 		});
 
-
-	
-	}
+	}*/
 
 
 

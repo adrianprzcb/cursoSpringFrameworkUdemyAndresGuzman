@@ -11,6 +11,8 @@ import com.adrian.springboot_jparelationships.entities.Client;
 @Repository
 public interface ClientRepository extends CrudRepository<Client, Long> {
 
+    /*  DA ERROR
     @Query("select c from Client c join fetch c.addresses")
     Optional<Client> findOne(Long id);
+     */
 } 
