@@ -64,6 +64,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 				client.getInvoices().remove(invoice);
 				invoice.setClient(null);
 				clientRepository.save(client);
+				System.out.println("Client saved: " + client);
 			});
 		});
 
