@@ -97,7 +97,9 @@ public class Client {
         return "Client{" + "id=" + id + 
         ", name=" + name + 
         ", lastname=" + lastname + 
-        ", adresses=" + adresses + '}';
+        ", adresses=" + adresses + 
+        ", invoices="+invoices +
+        '}';
     }
 
 
