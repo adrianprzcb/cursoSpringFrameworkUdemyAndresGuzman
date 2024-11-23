@@ -45,6 +45,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		client.getAdresses().add(adress);
 		client.getAdresses().add(adress2);
 		clientRepository.save(client);
+		System.out.println("Client saved: " + client);
 	}
 
 	@Transactional
