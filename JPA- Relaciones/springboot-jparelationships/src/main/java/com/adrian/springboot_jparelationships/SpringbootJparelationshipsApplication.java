@@ -46,7 +46,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		Invoice invoice = new Invoice("Compras de casa", 5000L);
 		Invoice invoice2 = new Invoice("Compras de oficina", 8000L);
 
-		client.addInvoice(invoice2).addInvoice(invoice2);
+		client.addInvoice(invoice).addInvoice(invoice2);
 
 
 		clientRepository.save(client);
