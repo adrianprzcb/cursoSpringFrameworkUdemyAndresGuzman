@@ -50,7 +50,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 			System.out.println(client);
 
 
-			Optional<Client> optionalClient2 = clientRepository.findById(2L);
+			Optional<Client> optionalClient2 = clientRepository.findOne(2L);
 			optionalClient2.ifPresent(c ->
 			{
 				c.getAdresses().remove(adress2);
