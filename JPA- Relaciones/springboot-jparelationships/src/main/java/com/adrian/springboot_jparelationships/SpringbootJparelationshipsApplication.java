@@ -14,6 +14,7 @@ import com.adrian.springboot_jparelationships.entities.Invoice;
 import com.adrian.springboot_jparelationships.repositories.ClientRepository;
 import com.adrian.springboot_jparelationships.repositories.InvoiceRepository;
 
+import ch.qos.logback.core.status.OnErrorConsoleStatusListener;
 import jakarta.transaction.Transactional;
 
 @SpringBootApplication
@@ -33,6 +34,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		OneToMany();
 		OneToManyInvoiceBidireccional();
 		
 	}
