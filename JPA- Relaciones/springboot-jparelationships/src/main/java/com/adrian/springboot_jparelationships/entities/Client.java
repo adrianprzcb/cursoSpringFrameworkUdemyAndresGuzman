@@ -90,6 +90,16 @@ public class Client {
         this.invoices = invoices;
     }
 
+    public Client addInvoice(Invoice invoice) {
+        this.invoices.add(invoice);
+        invoice.setClient(this);
+        return this;
+    }
+
+    public void removeInvoice(Invoice invoice) {
+        this.invoices.remove(invoice);
+    }
+
 
 
     @Override
