@@ -19,6 +19,7 @@ import com.adrian.springboot_jparelationships.entities.Student;
 import com.adrian.springboot_jparelationships.repositories.ClientDetailsRepository;
 import com.adrian.springboot_jparelationships.repositories.ClientRepository;
 import com.adrian.springboot_jparelationships.repositories.InvoiceRepository;
+import com.adrian.springboot_jparelationships.repositories.StudentRepository;
 
 import jakarta.transaction.Transactional;
 
@@ -33,6 +34,9 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Autowired
 	private ClientDetailsRepository ClientDetailsRepository;
+
+	@Autowired
+	private StudentRepository studentRepository;
 
 
 	public static void main(String[] args) {
@@ -57,6 +61,11 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 		student1.setCourses(Set.of(course1, course2));
 		student2.setCourses(Set.of(course2));
+
+		studentRepository.saveAll(Set.of(student1, student2));
+
+		System.out.println("Student saved: " + student1);
+		System.out.println("Student saved: " + student2);
 	}
 
 
