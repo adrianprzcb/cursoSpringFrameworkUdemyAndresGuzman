@@ -1,5 +1,6 @@
 package com.adrian.springboot_jparelationships.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.annotations.ManyToAny;
@@ -24,7 +25,7 @@ public class Course {
     private String instructor;
 
     @ManyToMany(mappedBy = "courses")
-    private Set<Student> students;
+    private Set<Student> students = new HashSet<>();
 
     
 
