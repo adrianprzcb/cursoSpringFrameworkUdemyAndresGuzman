@@ -40,8 +40,23 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		OneToOneFindById();
+		OneToManyBidireccional();
 		
+	}
+
+
+	@Transactional
+	public void OneToManyBidireccional() {
+
+		Client client = new Client("Erba", "Pura");
+		ClientDetails clientDetails = new ClientDetails(true, 1000);
+		client.setClientDetails(clientDetails);
+		clientDetails.setClient(client);
+		clientRepository.save(client);
+
+		System.out.println("Client saved: " + client);
+	
+
 	}
 
 
