@@ -2,6 +2,7 @@ package com.adrian.springboot_jparelationships;
 
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -50,9 +51,28 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		manyToManyBidireccional();
+		manyToManyBidireccionalRemove();
 		
 	}
+
+	@Transactional
+	public void manyToManyBidireccionalRemove(){
+		Student student1 = new Student("Adrian", "Gonzalez");
+		Student student2 = new Student("Fran", "Moras");
+
+		Course course1 = new Course("Java", "Adrian");
+		Course course2 = new Course("Spring", "Adrian");
+
+		student1.addCourse(course2);
+		student2.addCourse(course2);
+		student1.addCourse(course1);
+
+		studentRepository.saveAll(List.of(student1, student2));
+
+		System.out.println("Student saved: " + student1);
+		System.out.println("Student saved: " + student2);
+	}
+
 
 
 	@Transactional
@@ -67,7 +87,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		student2.addCourse(course2);
 		student1.addCourse(course1);
 
-		studentRepository.saveAll(Set.of(student1, student2));
+		studentRepository.saveAll(List.of(student1, student2));
 
 		System.out.println("Student saved: " + student1);
 		System.out.println("Student saved: " + student2);
