@@ -8,5 +8,6 @@ import com.adrian.springboot_crud.models.entities.Product;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long>{
 
-    
+    boolean existsBySku(String sku);
+
 }
