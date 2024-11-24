@@ -18,6 +18,7 @@ import com.adrian.springboot_jparelationships.entities.Invoice;
 import com.adrian.springboot_jparelationships.entities.Student;
 import com.adrian.springboot_jparelationships.repositories.ClientDetailsRepository;
 import com.adrian.springboot_jparelationships.repositories.ClientRepository;
+import com.adrian.springboot_jparelationships.repositories.CourseRepository;
 import com.adrian.springboot_jparelationships.repositories.InvoiceRepository;
 import com.adrian.springboot_jparelationships.repositories.StudentRepository;
 
@@ -37,6 +38,9 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Autowired
 	private StudentRepository studentRepository;
+
+	@Autowired
+	private CourseRepository courseRepository;
 
 
 	public static void main(String[] args) {
@@ -59,8 +63,8 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		Student student1 = optStudent1.orElseThrow();
 		Student student2 = optStudent2.orElseThrow();
 
-		Course course1 = new Course("Java", "Adrian");
-		Course course2 = new Course("Spring", "Adrian");
+		Course course1 = courseRepository.findById(1L).get();
+		Course course2 = courseRepository.findById(2L).get();
 
 		student1.setCourses(Set.of(course1, course2));
 		student2.setCourses(Set.of(course2));
