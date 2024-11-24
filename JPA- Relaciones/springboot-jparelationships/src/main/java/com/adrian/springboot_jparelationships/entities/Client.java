@@ -100,7 +100,8 @@ public class Client {
     }
 
     public void removeInvoice(Invoice invoice) {
-        this.invoices.remove(invoice);
+        this.getInvoices().remove(invoice);
+        invoice.setClient(null);
     }
 
 
