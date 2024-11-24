@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +18,10 @@ public class ClientDetails {
 
     private boolean premium;
     private Integer points;
+
+    @OneToMany
+    @JoinColumn()
+    private Client client;
 
 
     public ClientDetails() {
