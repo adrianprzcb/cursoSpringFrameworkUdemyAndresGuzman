@@ -79,6 +79,11 @@ public class Student {
         course.getStudents().add(this);
     }
 
+    public void removeCourse(Course course) {
+        this.courses.remove(course);
+        course.getStudents().remove(this);
+    }
+
 
 
     @Override
