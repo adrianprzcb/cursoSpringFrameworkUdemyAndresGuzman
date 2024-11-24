@@ -48,7 +48,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> create(@Valid @RequestBody Product product, BindingResult result){
+    public ResponseEntity<?> create(@Valid @RequestBody Product product, BindingResult result){
         if(result.hasFieldErrors()){
             return validation(result);
         }
@@ -56,7 +56,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Product> update( @Valid @RequestBody Product product, BindingResult result, @PathVariable Long id){
+    public ResponseEntity<?> update( @Valid @RequestBody Product product, BindingResult result, @PathVariable Long id){
         if(result.hasFieldErrors()){
             return validation(result);
         }
@@ -78,12 +78,12 @@ public class ProductController {
         }
     }
 
-    private ResponseEntity<Product> validation(BindingResult result){
+    private ResponseEntity<?> validation(BindingResult result){
         Map<String, String> errors = new HashMap<>();
         result.getFieldErrors().forEach(err ->{
             errors.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
         });
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.badRequest().body(errors);
     }
 
 }
