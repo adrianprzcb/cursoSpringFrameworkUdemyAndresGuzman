@@ -77,7 +77,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		Optional<Student> optStudentDb = studentRepository.findOneWithCourses(1L);
 		optStudentDb.ifPresent(student -> {
 			Student studentDb = optStudentDb.get();
-			Optional<Course> optCourse = courseRepository.findById(2L);
+			Optional<Course> optCourse = courseRepository.findById(3L);
 			if(optCourse.isPresent()){
 				Course course = optCourse.get();
 				studentDb.getCourses().remove(course);
