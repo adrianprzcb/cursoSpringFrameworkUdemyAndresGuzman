@@ -1,6 +1,7 @@
 package com.adrian.springboot_crud.services.implementations;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,29 +22,29 @@ public class ProductServiceImpl implements ProductService {
     @Transactional(readOnly = true)
     @Override
     public List<Product> findAll() {
-        // TODO Auto-generated method stub
-        return null;
+        return (List<Product>) productRepository.findAll();
     }
 
     @Transactional(readOnly = true)
     @Override
-    public Product findById(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Optional<Product> findById(Long id) {
+        return productRepository.findById(id);
     }
 
     @Transactional
     @Override
     public Product save(Product product) {
-        // TODO Auto-generated method stub
-        return null;
+        return productRepository.save(product);
     }
 
 
     @Transactional
     @Override
-    public void delete(Product product) {
-        // TODO Auto-generated method stub
+    public Optional<Product> delete(Product product) {
+        Optional<Product> productToDelete = productRepository.findById(product.getId());
+        productToDelete.ifPresent(prod -> productRepository.delete(prod));
+
+        return productToDelete;
 
     }
     
