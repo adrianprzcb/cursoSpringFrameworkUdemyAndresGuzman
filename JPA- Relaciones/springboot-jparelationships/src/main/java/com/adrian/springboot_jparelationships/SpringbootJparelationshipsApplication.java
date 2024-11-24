@@ -44,6 +44,17 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		
 	}
 
+	@Transactional
+	public void oneToOneBidireccionalFindByid(){
+		Optional<Client> optionalClient = clientRepository.findOne(2L);
+		optionalClient.ifPresent(client ->{
+			ClientDetails clientDetails = new ClientDetails(true, 1000);
+			client.setClientDetails(clientDetails);
+			clientRepository.save(client);
+			System.out.println("Client saved: " + client);
+		});
+	}
+
 
 	@Transactional
 	public void OneToManyBidireccional() {

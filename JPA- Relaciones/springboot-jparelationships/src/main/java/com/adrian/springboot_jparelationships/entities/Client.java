@@ -116,6 +116,12 @@ public class Client {
 
     public void setClientDetails(ClientDetails clientDetails) {
         this.clientDetails = clientDetails;
+        clientDetails.setClient(this);
+    }
+
+    public void removeClientDetails() {
+        clientDetails.setClient(null);
+        this.clientDetails = null;
     }
 
 
