@@ -24,7 +24,7 @@ public class Product {
     private String name;
 
     @Min(500)
-    @Max(500000000)
+    @NotNull
     private Double price;
 
     @NotEmpty
