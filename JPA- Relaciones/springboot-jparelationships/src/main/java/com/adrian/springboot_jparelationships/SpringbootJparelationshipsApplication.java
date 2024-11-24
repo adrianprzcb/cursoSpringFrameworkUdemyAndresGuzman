@@ -1,6 +1,6 @@
 package com.adrian.springboot_jparelationships;
 
-import java.util.Arrays;
+
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -12,11 +12,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.adrian.springboot_jparelationships.entities.Address;
 import com.adrian.springboot_jparelationships.entities.Client;
+import com.adrian.springboot_jparelationships.entities.ClientDetails;
 import com.adrian.springboot_jparelationships.entities.Invoice;
+import com.adrian.springboot_jparelationships.repositories.ClientDetailsRepository;
 import com.adrian.springboot_jparelationships.repositories.ClientRepository;
 import com.adrian.springboot_jparelationships.repositories.InvoiceRepository;
 
-import ch.qos.logback.core.status.OnErrorConsoleStatusListener;
 import jakarta.transaction.Transactional;
 
 @SpringBootApplication
@@ -28,6 +29,9 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 	@Autowired
 	private ClientRepository clientRepository;
 
+	@Autowired
+	private ClientDetailsRepository ClientDetailsRepository;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootJparelationshipsApplication.class, args);
@@ -36,10 +40,21 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		removeBidireccionalFindById();
+		OneToOne();
 		
 	}
 
+
+	@Transactional
+	public void OneToOne() {
+		Client client = new Client("Erba", "Pura");
+		clientRepository.save(client);
+
+		ClientDetails clientDetails = new ClientDetails(true, 1000);
+		clientDetails.setClient(client);
+		ClientDetailsRepository.save(clientDetails);
+
+	}
 
 	@Transactional
 	private void removeBidireccionalFindById() {
