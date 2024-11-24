@@ -13,7 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.adrian.springboot_jparelationships.entities.Address;
 import com.adrian.springboot_jparelationships.entities.Client;
 import com.adrian.springboot_jparelationships.entities.ClientDetails;
+import com.adrian.springboot_jparelationships.entities.Course;
 import com.adrian.springboot_jparelationships.entities.Invoice;
+import com.adrian.springboot_jparelationships.entities.Student;
 import com.adrian.springboot_jparelationships.repositories.ClientDetailsRepository;
 import com.adrian.springboot_jparelationships.repositories.ClientRepository;
 import com.adrian.springboot_jparelationships.repositories.InvoiceRepository;
@@ -40,9 +42,24 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		OneToManyBidireccional();
+		manyToMany();
 		
 	}
+
+
+	@Transactional
+	public void manyToMany(){
+		Student student1 = new Student("Adrian", "Gonzalez");
+		Student student2 = new Student("Fran", "Moras");
+
+		Course course1 = new Course("Java", "Adrian");
+		Course course2 = new Course("Spring", "Adrian");
+
+		student1.setCourses(Set.of(course1, course2));
+		student2.setCourses(Set.of(course2));
+	}
+
+
 
 	@Transactional
 	public void oneToOneBidireccionalFindByid(){
