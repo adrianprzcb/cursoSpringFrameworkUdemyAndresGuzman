@@ -74,7 +74,7 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 		System.out.println("Student saved: " + student2);
 
 
-		Optional<Student> optStudentDb = studentRepository.findById(1L);
+		Optional<Student> optStudentDb = studentRepository.findOneWithCourses(1L);
 		optStudentDb.ifPresent(student -> {
 			Student studentDb = optStudentDb.get();
 			Optional<Course> optCourse = courseRepository.findById(2L);
