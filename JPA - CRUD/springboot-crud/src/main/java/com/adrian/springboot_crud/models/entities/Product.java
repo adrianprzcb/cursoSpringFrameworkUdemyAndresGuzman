@@ -1,5 +1,8 @@
 package com.adrian.springboot_crud.models.entities;
 
+import com.adrian.springboot_crud.validation.IsExistsDb;
+import com.adrian.springboot_crud.validation.IsRequired;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +26,10 @@ public class Product {
     @NotBlank(message = "{NotBlank.product.name}")
     @Size(min = 3, max = 20)
     private String name;
+
+     @IsRequired
+    @IsExistsDb
+    private String sku;
 
     @Min(500)
     @NotNull(message = "{NotNull.product.price}")
@@ -71,6 +78,15 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
     }
 
 
