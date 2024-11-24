@@ -50,9 +50,43 @@ public class SpringbootJparelationshipsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		manyToManyFindById();
+		manyToManyRemoveFind();
 		
 	}
+
+	@Transactional
+	public void manyToManyRemoveFind(){
+		Optional<Student> optStudent1 = studentRepository.findById(1L);
+		Optional<Student> optStudent2 = studentRepository.findById(2L);
+
+		Student student1 = optStudent1.orElseThrow();
+		Student student2 = optStudent2.orElseThrow();
+
+		Course course1 = courseRepository.findById(1L).get();
+		Course course2 = courseRepository.findById(2L).get();
+
+		student1.setCourses(Set.of(course1, course2));
+		student2.setCourses(Set.of(course2));
+
+		studentRepository.saveAll(Set.of(student1, student2));
+
+		System.out.println("Student saved: " + student1);
+		System.out.println("Student saved: " + student2);
+
+
+		Optional<Student> optStudentDb = studentRepository.findById(1L);
+		optStudentDb.ifPresent(student -> {
+			Student studentDb = optStudentDb.get();
+			Optional<Course> optCourse = courseRepository.findById(2L);
+			if(optCourse.isPresent()){
+				Course course = optCourse.get();
+				studentDb.getCourses().remove(course);
+				studentRepository.save(studentDb);
+				System.out.println("Student saved: " + studentDb);
+			}
+		});
+	}
+
 
 	
 	@Transactional
