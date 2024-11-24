@@ -1,4 +1,5 @@
-package com.andres.curso.springboot.app.springbootcrud.validation;
+package com.adrian.springboot_crud.validation;
+
 
 import org.springframework.util.StringUtils;
 
