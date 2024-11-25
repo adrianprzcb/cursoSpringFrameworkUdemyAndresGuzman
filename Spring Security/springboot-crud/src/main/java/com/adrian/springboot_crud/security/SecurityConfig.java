@@ -3,7 +3,6 @@ package com.adrian.springboot_crud.security;
 
 import java.util.Arrays;
 
-import org.apache.catalina.servlets.DefaultServlet.SortManager.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
