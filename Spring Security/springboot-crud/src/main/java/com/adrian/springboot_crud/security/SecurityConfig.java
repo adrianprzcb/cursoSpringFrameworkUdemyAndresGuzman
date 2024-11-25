@@ -3,10 +3,12 @@ package com.adrian.springboot_crud.security;
 
 import java.util.Arrays;
 
+import org.apache.catalina.servlets.DefaultServlet.SortManager.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -82,7 +84,8 @@ public class SecurityConfig {
         FilterRegistrationBean<CorsFilter> corsBean = new FilterRegistrationBean<>(
             new CorsFilter(corsConfigurationSource()));
 
-            corsBean
+            corsBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+            return corsBean;
     }
 
 }
