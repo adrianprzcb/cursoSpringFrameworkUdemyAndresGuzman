@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService{
     PasswordEncoder passwordEncoder;
 
 
-
     @Override
     @Transactional(readOnly = true)
     public List<User> findAll() {
