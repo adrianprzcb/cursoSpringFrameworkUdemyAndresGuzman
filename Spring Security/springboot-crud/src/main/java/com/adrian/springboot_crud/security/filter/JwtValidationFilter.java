@@ -51,7 +51,7 @@ public class JwtValidationFilter extends BasicAuthenticationFilter{
         try {
             Claims claims = Jwts.parser().verifyWith(SECRET_KEY).build().parseSignedClaims(token).getPayload();
             String username = claims.getSubject();
-            String username2 = (String) claims.get("username");
+           // String username2 = (String) claims.get("username");
             Object authoritiesClaims = claims.get("authorities");
 
             Collection<? extends GrantedAuthority> authorities = Arrays.asList(
@@ -59,7 +59,7 @@ public class JwtValidationFilter extends BasicAuthenticationFilter{
                 .addMixIn(SimpleGrantedAuthority.class, SimpleGrantedAuthorityJsonCreator.class)
                 .readValue(authoritiesClaims.toString().getBytes(), 
                 SimpleGrantedAuthority[].class));
-            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username2, null, authorities);
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, null, authorities);
             SecurityContextHolder .getContext().setAuthentication(authenticationToken);
             chain.doFilter(request, response);
 
