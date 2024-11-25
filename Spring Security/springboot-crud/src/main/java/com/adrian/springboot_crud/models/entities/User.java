@@ -2,6 +2,7 @@ package com.adrian.springboot_crud.models.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
@@ -23,7 +24,7 @@ import jakarta.persistence.Transient;
 public class User {
 
 
-       @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -33,7 +34,8 @@ public class User {
     private String username;
 
     @NotBlank
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonIgnore
+    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Transient
