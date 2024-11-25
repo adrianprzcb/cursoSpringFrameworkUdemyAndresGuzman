@@ -12,6 +12,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "users")
@@ -26,6 +27,9 @@ public class User {
     private String username;
 
     private String password;
+
+    @Transient
+    private boolean admin;
 
     @ManyToMany
     @JoinTable(name = "users_roles", 
@@ -68,7 +72,15 @@ public class User {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
-    
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
 
 
 
