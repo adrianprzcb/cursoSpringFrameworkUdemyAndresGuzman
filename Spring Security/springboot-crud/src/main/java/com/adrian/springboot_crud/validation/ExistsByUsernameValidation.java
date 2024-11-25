@@ -7,7 +7,6 @@ import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.adrian.springboot_crud.repositories.UserRepository;
 import com.adrian.springboot_crud.services.interfaces.UserService;
-import com.adrian.springboot_crud.validation.ExistsByUsername;
 
 @Component
 public class ExistsByUsernameValidation implements ConstraintValidator<ExistsByUsername, String> {
