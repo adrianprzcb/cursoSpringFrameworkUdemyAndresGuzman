@@ -34,8 +34,7 @@ public class User {
     private String username;
 
     @NotBlank
-    @JsonIgnore
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Transient
