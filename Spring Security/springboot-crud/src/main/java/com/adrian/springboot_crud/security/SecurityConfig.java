@@ -56,6 +56,7 @@ public class SecurityConfig {
         .addFilter(new JwtAuthenticationFilter(authenticationManager()))
         .addFilter(new JwtValidationFilter(authenticationManager()))
         .csrf(config -> config.disable())
+        .cors(cors -> cors.configurationSource(corsConfigurationSource()))
         .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .build();
 
@@ -79,8 +80,9 @@ public class SecurityConfig {
     @Bean
     FilterRegistrationBean<CorsFilter> corsFilter(){
         FilterRegistrationBean<CorsFilter> corsBean = new FilterRegistrationBean<>(
-            new CorsFilter(corsConfigurationSource())
-        );
+            new CorsFilter(corsConfigurationSource()));
+
+            corsBean
     }
 
 }
