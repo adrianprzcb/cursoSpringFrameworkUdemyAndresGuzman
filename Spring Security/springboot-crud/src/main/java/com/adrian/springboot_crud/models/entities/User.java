@@ -51,7 +51,7 @@ public class User {
         this.enabled = true;
     }
 
-    @JsonIgnoreProperties({"users"})
+    @JsonIgnoreProperties({"users", "handler", "hibernateLazyInitializer"})
     @ManyToMany
     @JoinTable(name = "users_roles", 
     joinColumns = @JoinColumn(name = "user_id"),
