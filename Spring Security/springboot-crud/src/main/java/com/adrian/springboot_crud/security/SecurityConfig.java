@@ -1,6 +1,5 @@
 package com.adrian.springboot_crud.security;
 
-import java.net.Authenticator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
