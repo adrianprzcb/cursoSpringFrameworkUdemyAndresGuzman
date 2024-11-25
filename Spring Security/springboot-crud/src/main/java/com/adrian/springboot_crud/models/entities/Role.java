@@ -1,5 +1,8 @@
 package com.adrian.springboot_crud.models.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +21,10 @@ public class Role {
     @Column(unique = true)
     private String name;
 
+    private List<User> users;
+
     public Role() {
+        this.users = new ArrayList<>();
     }
 
     public Role(Long id, String name) {
