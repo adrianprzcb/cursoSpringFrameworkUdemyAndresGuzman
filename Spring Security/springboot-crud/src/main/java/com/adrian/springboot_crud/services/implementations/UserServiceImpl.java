@@ -49,6 +49,9 @@ public class UserServiceImpl implements UserService{
             Optional<Role> optionalRoleAdmin = roleRepository.findByName("ROLE_ADMIN");
             optionalRoleAdmin.ifPresent(roles::add);
         }
+
+        user.setRoles(roles);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
