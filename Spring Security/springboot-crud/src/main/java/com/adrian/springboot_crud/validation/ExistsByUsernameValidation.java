@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.adrian.springboot_crud.repositories.UserRepository;
 import com.adrian.springboot_crud.services.interfaces.UserService;
 
 @Component
