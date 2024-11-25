@@ -13,6 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfigurationSource;
 
 import com.adrian.springboot_crud.security.filter.JwtAuthenticationFilter;
 import com.adrian.springboot_crud.security.filter.JwtValidationFilter;
@@ -52,6 +53,17 @@ public class SecurityConfig {
         .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .build();
 
+    }
+
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource(){
+        return request -> {
+            var cors = new org.springframework.web.cors.CorsConfiguration();
+            cors.setAllowedOrigins(List.of("http://localhost:4200"));
+            cors.setAllowedMethods(List.of("GET","POST","PUT","DELETE"));
+            return cors;
+        };
     }
 
 }
