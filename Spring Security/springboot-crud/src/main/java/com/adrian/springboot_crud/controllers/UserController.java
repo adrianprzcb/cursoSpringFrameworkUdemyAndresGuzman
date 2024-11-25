@@ -43,11 +43,13 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
         userService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
 
 
     @PostMapping("/register")
