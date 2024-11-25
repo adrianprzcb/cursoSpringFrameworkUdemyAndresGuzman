@@ -2,6 +2,7 @@ package com.adrian.springboot_crud.security;
 
 import java.net.Authenticator;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -18,6 +19,7 @@ import com.adrian.springboot_crud.security.filter.JwtAuthenticationFilter;
 @Configuration
 public class SecurityConfig {
 
+    @Autowired
     private AuthenticationConfiguration authenticationConfiguration;
 
     @Bean
