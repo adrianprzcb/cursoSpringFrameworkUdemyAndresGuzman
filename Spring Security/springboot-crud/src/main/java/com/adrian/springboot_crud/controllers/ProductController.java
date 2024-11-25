@@ -32,11 +32,13 @@ public class ProductController {
     public ProductService productService;
 
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public List<Product> findAll() {
         return productService.findAll();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<?> view(@PathVariable Long id){
         Optional<Product> optProduct = productService.findById(id);
