@@ -16,6 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
@@ -40,7 +41,13 @@ public class User {
     @Transient
     private boolean admin;
 
-    private Boolean enabled;
+    private boolean enabled;
+
+
+    @PrePersist
+    public void prePersist(){
+        this.enabled = true;
+    }
 
     @ManyToMany
     @JoinTable(name = "users_roles", 
@@ -92,11 +99,11 @@ public class User {
         this.admin = admin;
     }
 
-    public Boolean isEnabled() {
+    public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(Boolean enabled) {
+    public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 
