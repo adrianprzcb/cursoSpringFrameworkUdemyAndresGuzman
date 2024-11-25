@@ -23,7 +23,7 @@ import com.adrian.springboot_crud.services.interfaces.UserService;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200" , originPatterns = "*")
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
