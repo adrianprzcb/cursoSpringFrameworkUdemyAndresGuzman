@@ -60,4 +60,10 @@ public class UserServiceImpl implements UserService{
         return userRepository.existsByUsername(username);
     }
 
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        userRepository.deleteById(id);
+    }
+
 }
