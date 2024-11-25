@@ -17,6 +17,9 @@ public class ExistsByUsernameValidation implements ConstraintValidator<ExistsByU
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext context) {
+        if (userService == null) {
+            return true;
+        }
        return !userService.existsByUsername(username);
     }
 
