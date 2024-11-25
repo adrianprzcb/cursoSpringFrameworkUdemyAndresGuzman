@@ -14,6 +14,8 @@ import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -53,6 +55,16 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
             return authenticatorManager.authenticate(authenticationToken);
     }
+
+    @Override
+    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
+            Authentication authResult) throws IOException, ServletException {
+        // TODO Auto-generated method stub
+        super.successfulAuthentication(request, response, chain, authResult);
+    }
+
+
+    
     
 
 }
