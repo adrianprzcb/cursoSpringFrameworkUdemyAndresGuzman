@@ -111,7 +111,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
         response.getWriter().write(new ObjectMapper().writeValueAsString(body));
         response.setContentType(CONTENT_TYPE);
-        response.setStatus(401);s
+        response.setStatus(401);
 
 
     }
