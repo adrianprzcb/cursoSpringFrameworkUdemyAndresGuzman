@@ -3,6 +3,8 @@ package com.adrian.springboot_crud.models.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +24,7 @@ public class Role {
     @Column(unique = true)
     private String name;
 
+    @JsonIgnoreProperties({"roles"})
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
 

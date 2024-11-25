@@ -3,6 +3,7 @@ package com.adrian.springboot_crud.models.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
@@ -50,6 +51,7 @@ public class User {
         this.enabled = true;
     }
 
+    @JsonIgnoreProperties({"users"})
     @ManyToMany
     @JoinTable(name = "users_roles", 
     joinColumns = @JoinColumn(name = "user_id"),
