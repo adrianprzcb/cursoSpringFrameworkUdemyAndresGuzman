@@ -5,9 +5,21 @@ import static com.adrian.springboot_crud.security.TokenJwtConfig.PREFIX_TOKEN;
 import static com.adrian.springboot_crud.security.TokenJwtConfig.SECRET_KEY;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
+import org.springframework.boot.autoconfigure.task.TaskExecutionProperties.Simple;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+import com.adrian.springboot_crud.security.SimpleGrantedAuthorityJsonCreator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
@@ -36,9 +48,22 @@ public class JwtValidationFilter extends BasicAuthenticationFilter{
 
         try {
             Claims claims = Jwts.parser().verifyWith(SECRET_KEY).build().parseSignedClaims(token).getPayload();
+            String username = claims.getSubject();
+            String username2 = (String) claims.get("username");
+            Object authoritiesClaims = claims.get("authorities");
+
+            Collection<? extends GrantedAuthority> authorities = Arrays.asList(
+                new ObjectMapper()
+                .addMixIn(SimpleGrantedAuthority.class, SimpleGrantedAuthorityJsonCreator.class)
+                .readValue(authoritiesClaims.toString().getBytes(), 
+                SimpleGrantedAuthority[].class));
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username2, null, authorities);
+            SecurityContextHolder .getContext().setAuthentication(authenticationToken);
+            chain.doFilter(request, response);
+
 
         } catch (JwtException e) {
-            // TODO: handle exception
+           Map<String, String> body = new HashMap<>();
         }
     }
 }
