@@ -29,6 +29,8 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     private AuthenticationManager authenticatorManager;
 
     private static final SecretKey SECRET_KEY = Jwts.SIG.HS256.key().build();
+    private static final String PREFIX_TOKEN = "Bearer ";
+    private static final String HEADER_AUTHORIZATION ="Authorization";
 
 
     public JwtAuthenticationFilter(AuthenticationManager authenticatorManager){
@@ -77,7 +79,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             .signWith(SECRET_KEY)
             .compact();
 
-            response.addHeader("Authentication", "Bearer " + token);
+            response.addHeader(HEADER_AUTHORIZATION, PREFIX_TOKEN+ token);
 
             Map<String, String> body = new HashMap<>();
             body.put("token", token);
