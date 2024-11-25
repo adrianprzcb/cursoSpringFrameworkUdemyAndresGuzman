@@ -20,7 +20,7 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 
         return http.authorizeHttpRequests( (authz) -> authz
-        .requestMatchers("/users").permitAll()
+        .requestMatchers("/api/users").permitAll()
         .anyRequest().authenticated())
         .csrf(config -> config.disable())
         .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
