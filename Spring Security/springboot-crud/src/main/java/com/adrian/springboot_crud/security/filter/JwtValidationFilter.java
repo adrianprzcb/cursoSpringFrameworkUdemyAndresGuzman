@@ -1,5 +1,6 @@
 package com.adrian.springboot_crud.security.filter;
 
+import static com.adrian.springboot_crud.security.TokenJwtConfig.CONTENT_TYPE;
 import static com.adrian.springboot_crud.security.TokenJwtConfig.HEADER_AUTHORIZATION;
 import static com.adrian.springboot_crud.security.TokenJwtConfig.PREFIX_TOKEN;
 import static com.adrian.springboot_crud.security.TokenJwtConfig.SECRET_KEY;
@@ -11,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.boot.autoconfigure.task.TaskExecutionProperties.Simple;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -64,6 +66,12 @@ public class JwtValidationFilter extends BasicAuthenticationFilter{
 
         } catch (JwtException e) {
            Map<String, String> body = new HashMap<>();
+           body.put("error", e.getMessage());
+           body.put("message", "Token JWT is not valid");
+           
+           response.getWriter().write(new ObjectMapper().writeValueAsString(body));
+           response.setStatus(HttpStatus.UNAUTHORIZED.value());
+           response.setContentType(CONTENT_TYPE);
         }
     }
 }
