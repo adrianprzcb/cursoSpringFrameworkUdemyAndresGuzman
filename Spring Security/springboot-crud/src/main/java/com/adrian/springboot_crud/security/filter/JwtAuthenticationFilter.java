@@ -97,7 +97,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             body.put("message", String.format("Hola %s, has iniciado sesión con éxito", username));
 
             response.getWriter().write(new ObjectMapper().writeValueAsString(body));
-            response.setContentType("application/json");
+            response.setContentType(CONTENT_TYPE);
             response.setStatus(200);
     }
 
