@@ -27,7 +27,7 @@ public class Product {
     @Size(min = 3, max = 20)
     private String name;
 
-     @IsRequired
+    @IsRequired
     @IsExistsDb
     private String sku;
 
