@@ -36,6 +36,8 @@ public class User {
     @Transient
     private boolean admin;
 
+    private boolean enabled;
+
     @ManyToMany
     @JoinTable(name = "users_roles", 
     joinColumns = @JoinColumn(name = "user_id"),
@@ -84,6 +86,14 @@ public class User {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
 
