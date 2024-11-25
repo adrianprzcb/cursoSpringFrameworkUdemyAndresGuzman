@@ -23,14 +23,13 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import static com.adrian.springboot_crud.security.TokenJwtConfig.*;
 
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter{
 
     private AuthenticationManager authenticatorManager;
 
-    private static final SecretKey SECRET_KEY = Jwts.SIG.HS256.key().build();
-    private static final String PREFIX_TOKEN = "Bearer ";
-    private static final String HEADER_AUTHORIZATION ="Authorization";
+    
 
 
     public JwtAuthenticationFilter(AuthenticationManager authenticatorManager){
