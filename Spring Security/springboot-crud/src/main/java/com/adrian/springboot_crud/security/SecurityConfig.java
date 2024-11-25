@@ -19,6 +19,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 import com.adrian.springboot_crud.security.filter.JwtAuthenticationFilter;
 import com.adrian.springboot_crud.security.filter.JwtValidationFilter;
@@ -76,6 +77,10 @@ public class SecurityConfig {
 
 
     @Bean
-    FilterRegistrationBean
+    FilterRegistrationBean<CorsFilter> corsFilter(){
+        FilterRegistrationBean<CorsFilter> corsBean = new FilterRegistrationBean<>(
+            new CorsFilter(corsConfigurationSource())
+        );
+    }
 
 }
