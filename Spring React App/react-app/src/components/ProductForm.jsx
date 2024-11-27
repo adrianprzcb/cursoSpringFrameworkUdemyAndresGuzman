@@ -6,6 +6,7 @@ const initialDataForm = {
     price: 0
 }
 
+//eslint-disable-next-line react/prop-types
 export const ProductForm = ({ handlerAdd })  => {
 
 
