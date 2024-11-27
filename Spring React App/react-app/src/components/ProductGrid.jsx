@@ -24,5 +24,5 @@ export const ProductGrid = ( {handlerRemove, products = []}) => {
 
 ProductGrid.propTypes = {
     products: PropTypes.array.isRequired,
-    handlerRemove: PropTypes.object.isRequired
+    handlerRemove: PropTypes.func.isRequired
 }
