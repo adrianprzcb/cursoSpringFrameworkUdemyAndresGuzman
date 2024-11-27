@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const initialDataForm = {
+    id: 0,
     name: '',
     description: '',
     price: 0
