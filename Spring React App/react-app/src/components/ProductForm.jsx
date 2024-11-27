@@ -71,7 +71,7 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
 
             </div>  
             <div>
-            <button type="submit">Save</button>
+            <button type="submit" className="btn btn-primary">Save</button>
 
             </div>
         </form>
