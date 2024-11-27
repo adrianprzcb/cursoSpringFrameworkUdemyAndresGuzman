@@ -1,5 +1,5 @@
 
-export const ProductGrid = ({oroducts}) => {
+export const ProductGrid = ({products}) => {
     return (
         <table>
             <thead>
