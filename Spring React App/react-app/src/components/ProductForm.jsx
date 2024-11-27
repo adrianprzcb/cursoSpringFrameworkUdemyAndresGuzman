@@ -20,6 +20,9 @@ export const ProductForm = () => {
                 alert('All fields are required');
                 return;
             }
+
+            console.log(form);
+            setForm(initialDataForm);
         }}>
             <div>
             <input placeholder="Name"
