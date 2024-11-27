@@ -1,5 +1,7 @@
+import { ProductDetail } from './ProductDetail';
 
-export const ProductGrid = ({products}) => {
+
+export const ProductGrid = ({products = []}) => {
     return (
         <table>
             <thead>
@@ -9,13 +11,11 @@ export const ProductGrid = ({products}) => {
                     <th>Description</th>
                 </tr>
             </thead>
-            <thead>
+            <tbody>
                 {products.map(product => {
-                    return (
-                        
-                    )
+                    return <ProductDetail product={product} key={product.name}/>
                 })}
-            </thead>
+            </tbody>
         </table>
 
     )
