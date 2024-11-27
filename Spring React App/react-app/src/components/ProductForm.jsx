@@ -70,7 +70,7 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
 
             </div>  
             <div>
-            <button type="submit">Add</button>
+            <button type="submit">Save</button>
 
             </div>
         </form>
