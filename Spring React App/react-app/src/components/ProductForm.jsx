@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const initialDataForm = {
     name: '',
@@ -12,6 +12,11 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
 
     const [form, setForm] = useState(initialDataForm);
     const { name, description, price } = form;
+
+    useEffect(() => {
+        setForm(productSelected);
+    }
+
 
     return (
         <form onSubmit={(event) => {
