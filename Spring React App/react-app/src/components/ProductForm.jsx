@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 const initialDataForm = {
     name: '',
@@ -12,7 +13,6 @@ export const ProductForm = () => {
     const { name, description, price } = form;
 
     return 
-    // eslint-disable-next-line no-unreachable
     (
         <form>
             <div>
