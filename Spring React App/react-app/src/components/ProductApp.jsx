@@ -1,4 +1,4 @@
-import { useState } from "react" 
+import { useEffect, useState } from "react" 
 
 const initProducts = [
     { name: 'Product 1', price: 100, description : 'fefefefe'  },
@@ -9,7 +9,10 @@ const initProducts = [
 
 export const ProductApp = () => {
     const [products, setProducts] = useState(initProducts);
-   // setProducts(initProducts);
+
+    useEffect(() => {
+     setProducts(initProducts);
+    }, [])
 
     return (
         <>
