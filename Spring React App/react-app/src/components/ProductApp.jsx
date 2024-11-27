@@ -50,11 +50,9 @@ export const ProductApp = () => {
         <div className="container my-4">
             <h2>Productos</h2>
             <div className="row">
-
-            <div className="col">
+            <div >
                 <ProductForm handlerAdd = {handlerAddProduct} productSelected={productSelected}/>
             </div>
-
             <div> 
                 <ProductGrid products={products} handlerRemove={handlerRemoveProduct} handlerProductSelected={handlerProductSelected}/>
             </div>
