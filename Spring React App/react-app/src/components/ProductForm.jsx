@@ -17,17 +17,26 @@ export const ProductForm = () => {
             <input placeholder="Name"
             name="name"
             value={name}
-            onChange={} 
+            onChange={(event) => setForm({
+                ...form,
+                name: event.target.value
+            })} 
             />
             <input placeholder="Description"
             name="Description"
             value={description}
-            onChange={} 
+            onChange={(event) => setForm({
+                ...form,
+                description: event.target.value
+            })}  
             />
             <input placeholder="Price"
             name="Price"
             value={price}
-            onChange={} 
+            onChange={(event) => setForm({
+                ...form,
+                price: event.target.value
+            })} 
             />
         </form>
     )
