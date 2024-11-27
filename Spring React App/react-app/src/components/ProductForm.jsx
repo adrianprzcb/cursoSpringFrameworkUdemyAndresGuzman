@@ -15,6 +15,7 @@ export const ProductForm = () => {
     // eslint-disable-next-line no-unreachable
     (
         <form>
+            <div>
             <input placeholder="Name"
             style={{marginBottom: '2px'}}
             name="name"
@@ -24,6 +25,9 @@ export const ProductForm = () => {
                 name: event.target.value
             })} 
             />
+            </div>
+
+            <div>
             <input placeholder="Description"
              style={{marginBottom: '2px'}}
             name="Description"
@@ -33,6 +37,11 @@ export const ProductForm = () => {
                 description: event.target.value
             })}  
             />
+
+            </div>
+
+         
+            <div>
             <input placeholder="Price"
             style={{marginBottom: '2px'}}
             name="Price"
@@ -42,6 +51,8 @@ export const ProductForm = () => {
                 price: event.target.value
             })} 
             />
+
+            </div>  
 
             <button type="submit">Add</button>
         </form>
