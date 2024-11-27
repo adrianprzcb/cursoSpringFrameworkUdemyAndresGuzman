@@ -1,7 +1,7 @@
 import { ProductDetail } from './ProductDetail';
 import { PropTypes } from 'prop-types';
 
-export const ProductGrid = ( handlerRemove, products = []}) => {
+export const ProductGrid = ( {handlerRemove, products = []}) => {
     return (
         <table>
             <thead>
