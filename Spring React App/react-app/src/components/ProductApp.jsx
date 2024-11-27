@@ -8,6 +8,12 @@ import { ProductForm } from "./ProductForm";
 export const ProductApp = () => {
     const [products, setProducts] = useState([]);
 
+    const [productSelected, setProductSelected] = useState({
+        name: '',
+        description: '',
+        price: ''
+    })
+
     useEffect(() => {
         const result = listProducts();
      setProducts(result);
