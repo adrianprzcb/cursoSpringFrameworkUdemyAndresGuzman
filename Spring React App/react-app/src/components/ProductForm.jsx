@@ -1,28 +1,32 @@
 
+const initialDataForm = {
+    name: '',
+    description: '',
+    price: 0
+}
+
 export const ProductForm = () => {
 
-    const initialDataForm = {
-        name: '',
-        description: '',
-        price: 0
-    }
+
+    const [form, setForm] = useState(initialDataForm);
+    const { name, description, price } = form;
 
     return 
     (
         <form>
             <input placeholder="Name"
             name="name"
-            value={initialDataForm.name}
+            value={form.name}
             onChange={} 
             />
             <input placeholder="Description"
             name="Description"
-            value={initialDataForm.description}
+            value={form.description}
             onChange={} 
             />
             <input placeholder="Price"
             name="Price"
-            value={initialDataForm.price}
+            value={form.price}
             onChange={} 
             />
         </form>
