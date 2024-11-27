@@ -21,13 +21,18 @@ export const ProductApp = () => {
 
         const handlerAddProduct = (product) =>{
             console.log(product);
-            setProducts([...products, {...product}])
-            setProducts(products.map(prod => {
-                if(prod.name === product.name) {
-                    return {...product};
-                }
-                return prod;
-        }))
+
+            if(products.includes(product)) {
+                setProducts(products.map(prod => {
+                    if(prod.name === product.name) {
+                        return {...product};
+                    }
+                    return prod;
+            }));
+            }else{
+                setProducts([...products, {...product}])
+            }
+       
         }
 
         const handlerRemoveProduct = (name) => {
