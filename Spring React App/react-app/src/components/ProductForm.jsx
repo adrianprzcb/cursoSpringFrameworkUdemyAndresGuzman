@@ -1,22 +1,28 @@
 
 export const ProductForm = () => {
 
+    const initialDataForm = {
+        name: '',
+        description: '',
+        price: 0
+    }
+
     return 
     (
         <form>
             <input placeholder="Name"
             name="name"
-            value={}
+            value={initialDataForm.name}
             onChange={} 
             />
             <input placeholder="Description"
             name="Description"
-            value={}
+            value={initialDataForm.description}
             onChange={} 
             />
             <input placeholder="Price"
             name="Price"
-            value={}
+            value={initialDataForm.price}
             onChange={} 
             />
         </form>
