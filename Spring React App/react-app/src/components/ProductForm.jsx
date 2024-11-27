@@ -16,7 +16,7 @@ export const ProductForm = () => {
     (
         <form>
             <input placeholder="Name"
-            style={{'margin-bottom': '2px'}}
+            style={{marginBottom: '2px'}}
             name="name"
             value={name}
             onChange={(event) => setForm({
@@ -25,7 +25,7 @@ export const ProductForm = () => {
             })} 
             />
             <input placeholder="Description"
-             style={{'margin-bottom': '2px'}}
+             style={{marginBottom: '2px'}}
             name="Description"
             value={description}
             onChange={(event) => setForm({
@@ -34,7 +34,7 @@ export const ProductForm = () => {
             })}  
             />
             <input placeholder="Price"
-            style={{'margin-bottom': '2px'}}
+            style={{marginBottom: '2px'}}
             name="Price"
             value={price}
             onChange={(event) => setForm({
