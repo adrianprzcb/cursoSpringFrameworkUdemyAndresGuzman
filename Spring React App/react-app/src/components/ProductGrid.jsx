@@ -1,7 +1,7 @@
 import { ProductDetail } from './ProductDetail';
 
 
-export const ProductGrid = ({products = []}) => {
+export const ProductGrid = ({products = {}}) => {
     return (
         <table>
             <thead>
