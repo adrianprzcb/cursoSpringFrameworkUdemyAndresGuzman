@@ -23,7 +23,7 @@ export const ProductApp = () => {
         const handlerAddProduct = (product) =>{
             console.log(product);
 
-            if(products.includes(product)) {
+            if(product.id > 0) {
                 setProducts(products.map(prod => {
                     if(prod.id === product.id) {
                         return {...product};
