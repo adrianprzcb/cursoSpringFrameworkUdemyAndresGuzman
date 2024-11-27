@@ -20,5 +20,5 @@ export const ProductDetail = ({ handlerProductSelected, handlerRemove, product =
 ProductDetail.propTypes = {
     product: PropTypes.object.isRequired,
     handlerRemove: PropTypes.func.isRequired,
-    handlerProductSelected: PropTypes.fun.isRequired
+    handlerProductSelected: PropTypes.func.isRequired
 }
