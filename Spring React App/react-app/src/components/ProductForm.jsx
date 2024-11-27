@@ -12,6 +12,7 @@ export const ProductForm = () => {
     const { name, description, price } = form;
 
     return 
+    // eslint-disable-next-line no-unreachable
     (
         <form>
             <input placeholder="Name"
@@ -38,6 +39,8 @@ export const ProductForm = () => {
                 price: event.target.value
             })} 
             />
+
+            <button type="submit">Add</button>
         </form>
     )
 }
