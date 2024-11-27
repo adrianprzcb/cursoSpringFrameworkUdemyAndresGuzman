@@ -7,10 +7,10 @@ export const ProductDetail = ({ handlerProductSelected, handlerRemove, product =
                         <td> { product.price }</td>
                         <td> { product.description }</td>
                         <td>
-                            <button onClick={() => handlerProductSelected(product)}>Update</button>
+                            <button className="btn btn-secondary btn-sm" onClick={() => handlerProductSelected(product)}>Update</button>
                         </td>
                         <td>
-                            <button onClick={() => handlerRemove(product.id)}>Remove</button>
+                            <button className="btn btn-danger btn-sm" onClick={() => handlerRemove(product.id)}>Remove</button>
                         </td>
                     </tr>
     )
