@@ -16,17 +16,17 @@ export const ProductForm = () => {
         <form>
             <input placeholder="Name"
             name="name"
-            value={form.name}
+            value={name}
             onChange={} 
             />
             <input placeholder="Description"
             name="Description"
-            value={form.description}
+            value={description}
             onChange={} 
             />
             <input placeholder="Price"
             name="Price"
-            value={form.price}
+            value={price}
             onChange={} 
             />
         </form>
