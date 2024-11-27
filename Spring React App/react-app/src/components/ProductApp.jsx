@@ -55,7 +55,7 @@ export const ProductApp = () => {
             </div>
             <div className="col"> 
                 {
-                   products.length === 0 ? <ProductGrid products={products} handlerRemove={handlerRemoveProduct} handlerProductSelected={handlerProductSelected}/> : <div className="alert alert-warning">No hay productos</div>
+                   products.length > 0 ? <ProductGrid products={products} handlerRemove={handlerRemoveProduct} handlerProductSelected={handlerProductSelected}/> : <div className="alert alert-warning">No hay productos</div>
                 }
                 
             </div>
