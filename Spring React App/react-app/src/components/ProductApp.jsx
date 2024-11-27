@@ -20,8 +20,7 @@ export const ProductApp = () => {
 
         const handlerRemoveProduct = (id) => {
             console.log(id);
-           setProducts(products.filter(product => product.id !== id));
-
+            setProducts(products.filter(product => product.id !== id));
         }
         
     return (
@@ -35,8 +34,8 @@ export const ProductApp = () => {
         </div>
 
         <div> 
-            <ProductGrid products={products} />
+            <ProductGrid products={products} handlerRemove={handlerRemoveProduct}/>
         </div>
         </>
-    )
+    )r
 }
