@@ -13,6 +13,10 @@ export const ProductApp = () => {
      setProducts(result);
     }, [])
 
+        const handlerAddProduct = (product) =>{
+            console.log(product);
+            setProducts([...products, {...product}])
+        }
     return (
         <>
         <div>
