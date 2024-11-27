@@ -48,15 +48,17 @@ export const ProductApp = () => {
     return (
         <>
         <div>
-            <h1>Productos</h1>
-        </div>
+            <h2>Productos</h2>
+            <div className="container my-4">
 
-        <div>
-            <ProductForm handlerAdd = {handlerAddProduct} productSelected={productSelected}/>
-        </div>
+            <div>
+                <ProductForm handlerAdd = {handlerAddProduct} productSelected={productSelected}/>
+            </div>
 
-        <div> 
-            <ProductGrid products={products} handlerRemove={handlerRemoveProduct} handlerProductSelected={handlerProductSelected}/>
+            <div> 
+                <ProductGrid products={products} handlerRemove={handlerRemoveProduct} handlerProductSelected={handlerProductSelected}/>
+            </div>
+            </div>
         </div>
         </>
     )
