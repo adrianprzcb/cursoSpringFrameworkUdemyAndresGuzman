@@ -9,6 +9,7 @@ export const ProductApp = () => {
     const [products, setProducts] = useState([]);
 
     const [productSelected, setProductSelected] = useState({
+        id : 0,
         name: '',
         description: '',
         price: ''
