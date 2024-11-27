@@ -9,7 +9,7 @@ const initProducts = [
 
 export const ProductApp = () => {
     const [products, setProducts] = useState(initProducts);
-    setProducts(initProducts);
+   // setProducts(initProducts);
 
     return (
         <>
