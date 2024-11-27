@@ -11,11 +11,9 @@ export const ProductGrid = ({products}) => {
             </thead>
             <thead>
                 {products.map(product => {
-                    return (<tr key={product.name}>
-                        <td> { product.name }</td>
-                        <td> { product.price }</td>
-                        <td> { product.description }</td>
-                    </tr>)
+                    return (
+                        
+                    )
                 })}
             </thead>
         </table>
