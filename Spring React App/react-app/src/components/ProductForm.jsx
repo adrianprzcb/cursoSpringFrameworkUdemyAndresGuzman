@@ -6,7 +6,7 @@ const initialDataForm = {
     price: 0
 }
 
-export const ProductForm = (handlerAdd ) => {
+export const ProductForm = (handlerAdd) => {
 
 
     const [form, setForm] = useState(initialDataForm);

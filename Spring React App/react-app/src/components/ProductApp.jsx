@@ -17,6 +17,7 @@ export const ProductApp = () => {
             console.log(product);
             setProducts([...products, {...product}])
         }
+        
     return (
         <>
         <div>
