@@ -16,9 +16,17 @@ export const ProductApp = () => {
 
     return (
         <>
-        <h1>Productos</h1>
-        <ProductForm />
-        <ProductGrid products={products} />
+        <div>
+            <h1>Productos</h1>
+        </div>
+
+        <div>
+            <ProductForm />
+        </div>
+
+        <div> 
+            <ProductGrid products={products} />
+        </div>
         </>
     )
 }
