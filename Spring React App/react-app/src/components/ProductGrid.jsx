@@ -1,7 +1,7 @@
 import { ProductDetail } from './ProductDetail';
 import { PropTypes } from 'prop-types';
 
-export const ProductGrid = ( { handlerPrductSelected, handlerRemove, products = []}) => {
+export const ProductGrid = ( { handlerProductSelected, handlerRemove, products = []}) => {
     return (
         <table>
             <thead>
@@ -15,7 +15,7 @@ export const ProductGrid = ( { handlerPrductSelected, handlerRemove, products = 
             </thead>
             <tbody>
                 {products.map(product => {
-                    return <ProductDetail handlerPrductSelected={handlerPrductSelected} handlerRemove ={handlerRemove} product={product} key={product.name}/>
+                    return <ProductDetail handlerProductSelected={handlerProductSelected} handlerRemove ={handlerRemove} product={product} key={product.name}/>
                 })}
             </tbody>
         </table>
@@ -26,5 +26,5 @@ export const ProductGrid = ( { handlerPrductSelected, handlerRemove, products = 
 ProductGrid.propTypes = {
     products: PropTypes.array.isRequired,
     handlerRemove: PropTypes.func.isRequired,
-    handlerPrductSelected: PropTypes.func.isRequired
+    handlerProductSelected: PropTypes.func.isRequired
 }
