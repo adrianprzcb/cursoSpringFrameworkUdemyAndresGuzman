@@ -34,7 +34,7 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
         }}>
             <div>
             <input placeholder="Name"
-            style={{marginBottom: '4px'}}
+            className="form-control my-3 w-75"
             name="name"
             value={name}
             onChange={(event) => setForm({
@@ -46,7 +46,7 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
 
             <div>
             <input placeholder="Description"
-             style={{marginBottom: '4px'}}
+            className="form-control my-3 w-75"
             name="Description"
             value={description}
             onChange={(event) => setForm({
@@ -60,7 +60,7 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
          
             <div>
             <input placeholder="Price"
-            style={{marginBottom: '4px'}}
+            className="form-control my-3 w-75"
             name="Price"
             value={price}
             onChange={(event) => setForm({
