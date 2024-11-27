@@ -17,6 +17,11 @@ export const ProductApp = () => {
             console.log(product);
             setProducts([...products, {...product}])
         }
+
+        const handlerRemoveProduct = (id) => {
+            console.log(id);
+           setProducts(products.filter(product => product.id !== id));
+        }
         
     return (
         <>
