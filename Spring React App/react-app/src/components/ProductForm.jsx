@@ -7,7 +7,7 @@ const initialDataForm = {
 }
 
 //eslint-disable-next-line react/prop-types
-export const ProductForm = ({ handlerAdd })  => {
+export const ProductForm = ({ productSelected, handlerAdd })  => {
 
 
     const [form, setForm] = useState(initialDataForm);

@@ -40,7 +40,7 @@ export const ProductApp = () => {
         </div>
 
         <div>
-            <ProductForm handlerAdd = {handlerAddProduct}/>
+            <ProductForm handlerAdd = {handlerAddProduct} productSelected={productSelected}/>
         </div>
 
         <div> 
