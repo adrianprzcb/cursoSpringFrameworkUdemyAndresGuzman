@@ -13,7 +13,7 @@ export const ProductApp = () => {
 
     return (
         <>
-        <h1>Product App</h1>
+        <h1>Listado Productos</h1>
         <table>
             <thead>
                 <tr>
