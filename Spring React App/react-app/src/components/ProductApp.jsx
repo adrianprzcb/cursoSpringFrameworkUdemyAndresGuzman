@@ -44,7 +44,7 @@ export const ProductApp = () => {
         </div>
 
         <div> 
-            <ProductGrid products={products} handlerRemove={handlerRemoveProduct}/>
+            <ProductGrid products={products} handlerRemove={handlerRemoveProduct} handlerProductSelected={handlerProductSelected}/>
         </div>
         </>
     )
