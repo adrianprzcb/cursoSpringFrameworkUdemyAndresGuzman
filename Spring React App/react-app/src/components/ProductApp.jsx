@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react" 
+import { listProducts } from "../services/ProductService";
 
 
 
 export const ProductApp = () => {
-    const [products, setProducts] = useState(initProducts);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-     setProducts(initProducts);
+        const result = listProducts();
+     setProducts(result);
     }, [])
 
     return (
