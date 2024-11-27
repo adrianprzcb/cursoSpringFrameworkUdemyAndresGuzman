@@ -13,7 +13,14 @@ export const ProductForm = () => {
     const { name, description, price } = form;
 
     return (
-        <form>
+        <form onSubmit={(event) => {
+            event.preventDefault();
+
+            if(!name || !description || !price) {
+                alert('All fields are required');
+                return;
+            }
+        }}>
             <div>
             <input placeholder="Name"
             style={{marginBottom: '4px'}}
