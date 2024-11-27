@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react" 
 import { listProducts } from "../services/ProductService";
+import { ProductGrid } from "./ProductGrid";
 
 
 
@@ -13,25 +14,8 @@ export const ProductApp = () => {
 
     return (
         <>
-        <h1>Listado Productos</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <thead>
-                {products.map(product => {
-                    return (<tr key={product.name}>
-                        <td> { product.name }</td>
-                        <td> { product.price }</td>
-                        <td> { product.description }</td>
-                    </tr>)
-                })}
-            </thead>
-        </table>
+        <h1>Productos</h1>
+        <ProductGrid products={products} />
         </>
     )
 }
