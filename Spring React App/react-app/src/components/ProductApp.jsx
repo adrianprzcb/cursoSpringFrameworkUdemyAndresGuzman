@@ -47,11 +47,11 @@ export const ProductApp = () => {
         
     return (
         <>
-        <div>
+        <div className="container my-4">
             <h2>Productos</h2>
-            <div className="container my-4">
+            <div className="row">
 
-            <div>
+            <div className="col">
                 <ProductForm handlerAdd = {handlerAddProduct} productSelected={productSelected}/>
             </div>
 
