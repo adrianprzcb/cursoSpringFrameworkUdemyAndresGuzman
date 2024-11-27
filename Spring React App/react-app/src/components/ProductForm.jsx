@@ -12,8 +12,7 @@ export const ProductForm = () => {
     const [form, setForm] = useState(initialDataForm);
     const { name, description, price } = form;
 
-    return 
-    (
+    return (
         <form>
             <div>
             <input placeholder="Name"
@@ -58,5 +57,5 @@ export const ProductForm = () => {
 
             </div>
         </form>
-    )
-}
+    );
+};
