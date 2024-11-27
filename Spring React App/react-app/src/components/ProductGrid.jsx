@@ -9,6 +9,7 @@ export const ProductGrid = ( {handlerRemove, products = []}) => {
                     <th>Name</th>
                     <th>Price</th>
                     <th>Description</th>
+                    <th>Remove</th>
                 </tr>
             </thead>
             <tbody>
