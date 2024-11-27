@@ -1,5 +1,5 @@
 
-export const ProductGrid = ({ product = {}}) => {
+export const ProductDetail = ({ product = {}}) => {
     return(
         <tr key={product.name}>
                         <td> { product.name }</td>
