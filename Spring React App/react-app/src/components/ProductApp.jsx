@@ -28,6 +28,10 @@ export const ProductApp = () => {
             console.log(name);
             setProducts(products.filter(product => product.name !== name));
         }
+
+        const handlerProductSelected = (product) => {
+            
+        }
         
     return (
         <>
