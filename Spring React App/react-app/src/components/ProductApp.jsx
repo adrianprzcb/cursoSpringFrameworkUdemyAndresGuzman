@@ -24,7 +24,7 @@ export const ProductApp = () => {
         </div>
 
         <div>
-            <ProductForm />
+            <ProductForm handlerAdd = {handlerAddProduct}/>
         </div>
 
         <div> 

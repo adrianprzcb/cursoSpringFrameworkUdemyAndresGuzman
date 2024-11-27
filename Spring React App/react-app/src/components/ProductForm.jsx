@@ -6,7 +6,7 @@ const initialDataForm = {
     price: 0
 }
 
-export const ProductForm = () => {
+export const ProductForm = (handlerAdd ) => {
 
 
     const [form, setForm] = useState(initialDataForm);
@@ -21,7 +21,8 @@ export const ProductForm = () => {
                 return;
             }
 
-            console.log(form);
+           // console.log(form);
+            handlerAdd(form);
             setForm(initialDataForm);
         }}>
             <div>
