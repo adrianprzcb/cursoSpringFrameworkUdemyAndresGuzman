@@ -25,13 +25,13 @@ export const ProductApp = () => {
 
             if(products.includes(product)) {
                 setProducts(products.map(prod => {
-                    if(prod.name === product.name) {
+                    if(prod.id === product.id) {
                         return {...product};
                     }
                     return prod;
             }));
             }else{
-                setProducts([...products, {...product}])
+                setProducts([...products, {...product, id: new Date().getTime()}]);
             }
        
         }
