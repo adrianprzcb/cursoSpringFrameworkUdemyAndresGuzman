@@ -9,7 +9,8 @@ export const ProductGrid = ( { handlerPrductSelected, handlerRemove, products = 
                     <th>Name</th>
                     <th>Price</th>
                     <th>Description</th>
-                   {/* <th>Remove</th> */} 
+                    <th>Update</th>
+                    <th>Remove</th> 
                 </tr>
             </thead>
             <tbody>
@@ -24,5 +25,6 @@ export const ProductGrid = ( { handlerPrductSelected, handlerRemove, products = 
 
 ProductGrid.propTypes = {
     products: PropTypes.array.isRequired,
-    handlerRemove: PropTypes.func.isRequired
+    handlerRemove: PropTypes.func.isRequired,
+    handlerPrductSelected: PropTypes.func.isRequired
 }
