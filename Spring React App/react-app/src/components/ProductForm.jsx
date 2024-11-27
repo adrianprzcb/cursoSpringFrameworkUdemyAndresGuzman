@@ -12,7 +12,7 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
 
 
     const [form, setForm] = useState(initialDataForm);
-    const { name, description, price } = form;
+    const { id, name, description, price } = form;
 
     useEffect(() => {
         setForm(productSelected);
@@ -71,7 +71,9 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
 
             </div>  
             <div>
-            <button type="submit" className="btn btn-primary">Save</button>
+            <button type="submit" className="btn btn-primary">
+                {id> 0 ? 'Update' : 'Create'}
+                </button>
 
             </div>
         </form>
