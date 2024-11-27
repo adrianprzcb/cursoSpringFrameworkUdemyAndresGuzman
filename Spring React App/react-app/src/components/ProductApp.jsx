@@ -30,7 +30,7 @@ export const ProductApp = () => {
         }
 
         const handlerProductSelected = (product) => {
-            
+            setProductSelected({...product});
         }
         
     return (
