@@ -15,7 +15,7 @@ export const ProductForm = ({ productSelected, handlerAdd })  => {
 
     useEffect(() => {
         setForm(productSelected);
-    };
+    }, [productSelected]);
 
 
     return (
