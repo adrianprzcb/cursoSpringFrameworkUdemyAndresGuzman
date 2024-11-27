@@ -37,5 +37,5 @@ export const ProductApp = () => {
             <ProductGrid products={products} handlerRemove={handlerRemoveProduct}/>
         </div>
         </>
-    )r
+    )
 }
