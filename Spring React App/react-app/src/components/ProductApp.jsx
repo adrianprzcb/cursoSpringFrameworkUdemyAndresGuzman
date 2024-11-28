@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react" 
-import { create, findAll, update } from "../services/ProductService";
+import { create, findAll, remove, update } from "../services/ProductService";
 import { ProductGrid } from "./ProductGrid";
 import { ProductForm } from "./ProductForm";
 
@@ -45,6 +45,7 @@ export const ProductApp = () => {
 
         const handlerRemoveProduct = (id) => {
             console.log(id);
+            remove(id);
             setProducts(products.filter(product => product.id !== id));
         }
 
