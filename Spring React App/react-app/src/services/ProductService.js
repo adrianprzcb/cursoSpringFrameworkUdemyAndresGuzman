@@ -9,3 +9,8 @@ const initProducts = [
 export const listProducts = () => {
     return initProducts;
 }
+
+
+export const findAll = () => {
+    
+}
