@@ -17,6 +17,7 @@ export const ProductApp = () => {
 
     const getProducts = async () => {
         const result = await findAll();
+        console.log(result);
         setProducts(result.data._embedded.products);
     }
 
