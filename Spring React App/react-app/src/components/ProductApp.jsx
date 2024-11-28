@@ -17,7 +17,7 @@ export const ProductApp = () => {
 
     const getProducts = async () => {
         const result = await findAll();
-        setProducts(result);
+        setProducts(result.data._embedded.products);
     }
 
     useEffect(() => {
