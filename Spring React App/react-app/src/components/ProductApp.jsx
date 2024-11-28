@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react" 
-import { findAll } from "../services/ProductService";
+import { findAll, update } from "../services/ProductService";
 import { ProductGrid } from "./ProductGrid";
 import { ProductForm } from "./ProductForm";
 
@@ -25,13 +25,14 @@ export const ProductApp = () => {
         getProducts();
     }, [])
 
-        const handlerAddProduct = (product) =>{
+        const handlerAddProduct = async (product) =>{
             console.log(product);
 
             if(product.id > 0) {
+               const response = await update(product);
                 setProducts(products.map(prod => {
                     if(prod.id === product.id) {
-                        return {...product};
+                        return {...response.data};
                     }
                     return prod;
             }));
