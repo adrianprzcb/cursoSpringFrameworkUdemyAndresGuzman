@@ -1,3 +1,4 @@
+import axios from "axios";
 
 const initProducts = [
     { id: 1, name: 'Product 1', price: 100, description : 'fefefefe'  },
@@ -12,5 +13,7 @@ export const listProducts = () => {
 
 
 export const findAll = () => {
-    
+
+    const response = axios.get('http://localhost:8080/api/products')
+
 }
