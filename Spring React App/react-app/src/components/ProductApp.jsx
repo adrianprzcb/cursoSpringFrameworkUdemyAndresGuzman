@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react" 
-import { findAll, update } from "../services/ProductService";
+import { create, findAll, update } from "../services/ProductService";
 import { ProductGrid } from "./ProductGrid";
 import { ProductForm } from "./ProductForm";
 
@@ -37,7 +37,8 @@ export const ProductApp = () => {
                     return prod;
             }));
             }else{
-                setProducts([...products, {...product, id: new Date().getTime()}]);
+                const response = await create(product);
+                setProducts([...products, {...response.data}]);
             }
        
         }
