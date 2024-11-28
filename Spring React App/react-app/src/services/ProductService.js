@@ -23,3 +23,16 @@ export const findAll = async() => {
    return [];
 
 }
+
+
+export const create = async({name, description, price}) =>{
+
+    try {
+        const response = await axios.post(baseUrl, {name: name, description: description, price: price});
+        return response;
+    } catch (error) {
+        console.log('Error: ', error);
+    }
+    return [];
+
+}
