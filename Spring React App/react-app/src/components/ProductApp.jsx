@@ -16,7 +16,7 @@ export const ProductApp = () => {
     })
 
     useEffect(() => {
-        const result = findAll();
+        const result = await findAll();
      setProducts(result);
     }, [])
 
