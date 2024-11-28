@@ -9,7 +9,6 @@ import { ProductService } from '../service/product.service';
 })
 export class ProductComponent {
 
-  constructor(private service: ProductService) {
-  }
+  constructor(private service: ProductService) {}
 
 }
