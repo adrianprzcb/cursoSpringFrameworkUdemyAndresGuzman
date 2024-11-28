@@ -14,6 +14,9 @@ export class AppComponent {
   enabled: Boolean = false;
 
 
+  courses: string[] = ['Angular', 'React', 'Vue'];
+
+
   setEnabled(): void {
     if (this.enabled) {
       this.enabled = false;
