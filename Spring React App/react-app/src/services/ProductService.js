@@ -13,9 +13,9 @@ export const listProducts = () => {
 
 const baseUrl = 'http://localhost:8080/products';
 
-export const findAll = () => {
+export const findAll = async() => {
 
-    const response = axios.get(baseUrl);
+    const response = await axios.get(baseUrl);
     return response;
 
 }
