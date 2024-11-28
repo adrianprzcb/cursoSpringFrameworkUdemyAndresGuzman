@@ -14,6 +14,7 @@ export const listProducts = () => {
 
 export const findAll = () => {
 
-    const response = axios.get('http://localhost:8080/api/products')
+    const response = axios.get('http://localhost:8080/api/products');
+    return response;
 
 }
