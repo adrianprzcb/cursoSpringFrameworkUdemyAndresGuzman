@@ -1,6 +1,6 @@
-<button type="button">
+<button type="button" (click)="setEnabled">
 
-{{enabled}}
+{{enabled? 'Ocultar': 'Mostrar'}}
 </button>
 <div *ngIf="enabled; else notEnabled">
   <h2>{{title}}</h2>
