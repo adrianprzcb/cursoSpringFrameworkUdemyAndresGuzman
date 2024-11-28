@@ -49,3 +49,15 @@ export const update = async({ id, name, description, price}) =>{
     return undefined;
 
 }
+
+
+
+export const remove = async(id) => {
+    try {
+        const response = await axios.delete(`${baseUrl}/${id}`);
+        return response;
+    } catch (error) {
+        console.log('Error: ', error);
+    }
+    return undefined;
+}
