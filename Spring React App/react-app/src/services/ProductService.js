@@ -15,7 +15,7 @@ const baseUrl = 'http://localhost:8080/products';
 
 export const findAll = () => {
 
-    const response = axios.get('http://localhost:8080/api/products');
+    const response = axios.get(baseUrl);
     return response;
 
 }
