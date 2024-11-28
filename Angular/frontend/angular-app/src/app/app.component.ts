@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
 })
 export class AppComponent {
   title = 'Hola mundo angular 19';
-  enabled: Boolean = true;
+  enabled: Boolean = false;
 
 
   setEnabled(): void {
