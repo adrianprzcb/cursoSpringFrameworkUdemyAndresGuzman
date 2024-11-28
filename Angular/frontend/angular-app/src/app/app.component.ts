@@ -15,7 +15,11 @@ export class AppComponent {
 
 
   setEnabled(): void {
-    this.enabled = true ;
+    if (this.enabled) {
+      this.enabled = false;
+    } else {
+      this.enabled = true;
+    }
     console.log('Hemos hecho click en setEnabled');
   }
 }
