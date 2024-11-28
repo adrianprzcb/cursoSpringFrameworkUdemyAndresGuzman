@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react" 
-import { listProducts } from "../services/ProductService";
+import { findAll } from "../services/ProductService";
 import { ProductGrid } from "./ProductGrid";
 import { ProductForm } from "./ProductForm";
 
@@ -16,7 +16,7 @@ export const ProductApp = () => {
     })
 
     useEffect(() => {
-        const result = listProducts();
+        const result = findAll();
      setProducts(result);
     }, [])
 
