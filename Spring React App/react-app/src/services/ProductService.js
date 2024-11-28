@@ -11,6 +11,7 @@ export const listProducts = () => {
     return initProducts;
 }
 
+const baseUrl = 'http://localhost:8080/products';
 
 export const findAll = () => {
 
