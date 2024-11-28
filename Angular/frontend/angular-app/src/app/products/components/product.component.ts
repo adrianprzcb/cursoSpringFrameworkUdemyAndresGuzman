@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-product',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
+
+  constructor(private service: ProductService) {
+  }
 
 }
