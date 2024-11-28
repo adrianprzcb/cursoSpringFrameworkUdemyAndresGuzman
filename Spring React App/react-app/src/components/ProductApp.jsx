@@ -15,9 +15,13 @@ export const ProductApp = () => {
         price: ''
     })
 
-    useEffect(() => {
+    const getProducts = async () => {
         const result = await findAll();
-     setProducts(result);
+        setProducts(result);
+    }
+
+    useEffect(() => {
+        getProducts();
     }, [])
 
         const handlerAddProduct = (product) =>{
