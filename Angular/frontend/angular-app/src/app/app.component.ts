@@ -9,4 +9,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Hola mundo angular 19';
+  enabled: Boolean = true;
 }
