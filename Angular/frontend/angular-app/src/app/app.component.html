@@ -12,9 +12,9 @@
   <h2>Disabled</h2>
 </ng-template>
 
-<ul>
+<ul *ngIf="enabled">
   <li *ngFor="let course of courses">
-    unio
+    {{course}}
   </li>
 </ul>
 
