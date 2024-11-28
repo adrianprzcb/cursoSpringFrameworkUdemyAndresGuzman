@@ -41,7 +41,7 @@ export const create = async({name, description, price}) =>{
 export const update = async({ id, name, description, price}) =>{
 
     try {
-        const response = await axios.post(baseUrl, '/' + id, {name: name, description: description, price: price});
+        const response = await axios.post(`${baseUrl}/${id}`, {name: name, description: description, price: price});
         return response;
     } catch (error) {
         console.log('Error: ', error);
