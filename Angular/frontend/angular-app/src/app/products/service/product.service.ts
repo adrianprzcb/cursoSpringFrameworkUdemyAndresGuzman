@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,5 @@ export class ProductService {
   constructor() { }
 
 
-  findAll():
+  findAll(): Observable<Product []>
 }
