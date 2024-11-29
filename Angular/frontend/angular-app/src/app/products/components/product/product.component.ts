@@ -23,5 +23,11 @@ export class ProductComponent implements OnInit{
   }
 
 
+  addProduct(product: Product){
+    product.id = new Date().getTime();
+    this.products.push(product)
+  }
+
+
 
 }
