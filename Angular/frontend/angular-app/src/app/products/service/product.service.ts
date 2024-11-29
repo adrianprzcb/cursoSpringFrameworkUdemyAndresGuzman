@@ -34,4 +34,9 @@ export class ProductService {
         response._embedded.products as Product[]),
     );
   }
+
+
+  create(product: Product): Observable<Product>{
+    return  this.http.post<Product>(this.url, product);
+  }
 }
