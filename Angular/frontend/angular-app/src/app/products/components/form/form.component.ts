@@ -17,7 +17,7 @@ export class FormComponent {
     price: 0};
 
     onSubmit(): void{
-
+      console.log(this.product)
     }
 
 }
