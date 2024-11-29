@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ProductService } from '../../service/product.service';
 import { Product } from '../../models/product';
+import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-product',
-  imports: [],
+  imports: [FormComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
