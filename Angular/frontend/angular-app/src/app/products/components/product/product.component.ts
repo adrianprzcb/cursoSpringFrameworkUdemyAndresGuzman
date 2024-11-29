@@ -16,6 +16,8 @@ export class ProductComponent implements OnInit{
 
   products: Product[] = [];
 
+  productSelected: Product = new Product();
+
   ngOnInit(): void {
     this.service.findAll().subscribe(products => {
       this.products = products;

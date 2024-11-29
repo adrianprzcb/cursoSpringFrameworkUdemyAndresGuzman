@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductService {
 
-  private products: Product[] = [
+   products: Product[] = [
     {
       id: 1,
       name: 'Mesa Mesa',
