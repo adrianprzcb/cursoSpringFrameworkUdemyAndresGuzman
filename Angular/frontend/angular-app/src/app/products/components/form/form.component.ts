@@ -25,6 +25,9 @@ export class FormComponent {
         this.newProductEvent.emit(this.product);
         console.log(this.product)
       }
+      productForm.reset();
+      productForm.resetForm();
+
     }
 
 
