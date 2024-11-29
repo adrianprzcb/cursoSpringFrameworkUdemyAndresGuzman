@@ -9,6 +9,16 @@
         <th>price</th>
       </tr>
     </thead>
+    <tbody>
+      @for (product of products; track $index) {
+        <tr>
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+        </tr>
+      }
+    </tbody>
   </table>
 
 
