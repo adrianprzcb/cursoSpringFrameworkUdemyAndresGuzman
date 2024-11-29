@@ -35,7 +35,14 @@ export class ProductComponent implements OnInit{
         return prod;
       })
     }else{
+
       product.id = new Date().getTime();
+
+      this.service.create(product).subscribe(productNew =>
+      {
+        this.products = [... this.products, {...productNew}]
+      }
+      )
       this.products.push(product)
     }
 
