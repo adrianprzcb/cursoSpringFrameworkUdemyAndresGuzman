@@ -1,1 +1,17 @@
-<p>product works!</p>
+@if(products.length > 0){
+
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>description</th>
+        <th>price</th>
+      </tr>
+    </thead>
+  </table>
+
+
+}@else {
+  <div>Lo sentimos no hay registros en el sistema</div>
+}
