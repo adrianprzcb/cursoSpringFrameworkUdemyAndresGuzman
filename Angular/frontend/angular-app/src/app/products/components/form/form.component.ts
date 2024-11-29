@@ -16,5 +16,9 @@ export class FormComponent {
     description: '',
     price: 0};
 
+    onSubmit(): void{
+
+    }
+
 }
 
