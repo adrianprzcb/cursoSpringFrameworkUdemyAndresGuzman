@@ -47,7 +47,7 @@ export class ProductComponent implements OnInit{
 
   onRemoveProduct(id: number) : void{
 
-    this.products = this.products.filter(this.products)
+    this.products = this.products.filter(products => products.id != id);
 
   }
 
