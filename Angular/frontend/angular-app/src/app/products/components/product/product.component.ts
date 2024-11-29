@@ -26,8 +26,19 @@ export class ProductComponent implements OnInit{
 
 
   addProduct(product: Product){
-    product.id = new Date().getTime();
-    this.products.push(product)
+
+    if(product.id > 0){
+      this.products = this.products.map( prod => {
+        if(prod.id == product.id){
+          return {...product};
+        }
+        return prod;
+      })
+    }else{
+      product.id = new Date().getTime();
+      this.products.push(product)
+    }
+
   }
 
   onUpdateProduct(productRow: Product){
