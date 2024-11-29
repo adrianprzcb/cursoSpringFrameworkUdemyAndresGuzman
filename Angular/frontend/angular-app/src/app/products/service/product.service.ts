@@ -26,7 +26,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  private url: string = 'http:localhost:8080/products'
+  private url: string = 'http://localhost:8080/products'
 
   findAll(): Observable<Product []> {
     return this.http.get<Product[]>(this.url).pipe(
