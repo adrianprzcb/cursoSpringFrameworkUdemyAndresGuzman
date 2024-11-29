@@ -28,10 +28,10 @@
     [(ngModel)]="product.description"
     #description="ngModel">
   </div>
-  <div *ngIf="name.invalid && (name.dirty || name.touched)">
+  <div *ngIf="description.invalid && (description.dirty || description.touched)">
 
     <div>
-      El nombre es requerido.
+      La descripción es requerida.
     </div>
 
   </div>
