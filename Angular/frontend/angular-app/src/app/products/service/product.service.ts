@@ -31,8 +31,7 @@ export class ProductService {
   findAll(): Observable<Product []> {
     return this.http.get<Product[]>(this.url).pipe(
       map((response: any) =>
-        response._embedded.products as Product[]
-      ),
+        response._embedded.products as Product[]),
     );
   }
 }
