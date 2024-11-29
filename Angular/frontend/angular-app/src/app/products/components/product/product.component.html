@@ -1,6 +1,16 @@
-<h2>Listado de productos</h2>
+<div class="container">
 
-<product-form (newProductEvent)="addProduct($event)" [product] = "productSelected"></product-form>
+<h2>Listado de productos</h2>
+<div class="row">
+
+  <div class="col">
+
+    <product-form (newProductEvent)="addProduct($event)" [product] = "productSelected"></product-form>
+
+  </div>
+  <div class="col">
+
+
 
 @if(products.length > 0){
 
@@ -33,3 +43,6 @@
 }@else {
   <div>Lo sentimos no hay registros en el sistema</div>
 }
+
+</div>
+</div>
