@@ -49,7 +49,7 @@ export class ProductComponent implements OnInit{
         this.products = [... this.products, {...productNew}]
       }
       )
-      this.products.push(product)
+      this.productSelected = new Product();
     }
 
   }
