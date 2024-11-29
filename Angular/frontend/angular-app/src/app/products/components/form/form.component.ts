@@ -24,5 +24,10 @@ export class FormComponent {
       console.log(this.product)
     }
 
+
+    clean(): void{
+      this.product = new Product();
+    }
+
 }
 
