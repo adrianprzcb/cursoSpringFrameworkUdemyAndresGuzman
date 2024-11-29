@@ -30,6 +30,10 @@ export class ProductComponent implements OnInit{
     this.products.push(product)
   }
 
+  onUpdateProduct(productRow: Product){
+    this.productSelected = productRow;
+  }
+
 
 
 }
