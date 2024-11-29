@@ -9,15 +9,23 @@
     [(ngModel)]="product.name"
     #name="ngModel"
     required
+    minlength="5"
 >
   </div>
 
   <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
 
+    @if (name.errors!['required']) {
       <div>
         El nombre es requerido.
       </div>
+    }
 
+    @if(name.errors!['minlength']){
+      <div>
+        El nombre debe tener al menos 5 caracteres.
+      </div>
+    }
   </div>
 
   <div>
