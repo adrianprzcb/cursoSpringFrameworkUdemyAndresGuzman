@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-product',
-  imports: [CommonModule, RouterOutlet],
+  imports: [],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
