@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../models/product';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -20,9 +20,11 @@ export class FormComponent {
 
     @Output() newProductEvent = new EventEmitter();
 
-    onSubmit(): void{
-      this.newProductEvent.emit(this.product);
-      console.log(this.product)
+    onSubmit(productForm: NgForm): void{
+      if(productForm.valid){
+        this.newProductEvent.emit(this.product);
+        console.log(this.product)
+      }
     }
 
 
