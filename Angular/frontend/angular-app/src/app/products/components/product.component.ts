@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../service/product.service';
 import { Product } from '../models/product';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-product',
-  imports: [],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
