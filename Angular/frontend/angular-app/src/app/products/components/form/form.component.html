@@ -11,7 +11,13 @@
     >
   </div>
 
-  <div *ngIf="name.invalid && (name.dirty || name.touched)"></div>
+  <div *ngIf="name.invalid && (name.dirty || name.touched)">
+
+    <div>
+      El nombre es requerido.
+    </div>
+
+  </div>
 
   <div>
     <input
@@ -22,7 +28,13 @@
     [(ngModel)]="product.description"
     #description="ngModel">
   </div>
+  <div *ngIf="name.invalid && (name.dirty || name.touched)">
 
+    <div>
+      El nombre es requerido.
+    </div>
+
+  </div>
 
   <div>
     <input
@@ -34,6 +46,15 @@
     #price="ngModel">
 
   </div>
+
+  <div *ngIf="name.invalid && (name.dirty || name.touched)">
+
+    <div>
+      El nombre es requerido.
+    </div>
+
+  </div>
+
   <div>
     <button type="submit" class="btn btn-primary my-2 "> {{product.id > 0? 'Update' : 'Create'}}</button>
     <button class="btn btn-success my-2 mx-2" (click)="clean()" type="button"> Clean</button>
