@@ -5,10 +5,11 @@ import { RouterOutlet } from '@angular/router';
 import { ProductService } from '../../service/product.service';
 import { Product } from '../../models/product';
 import { FormComponent } from '../form/form.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
-  imports: [FormComponent],
+  imports: [FormComponent, FormsModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
