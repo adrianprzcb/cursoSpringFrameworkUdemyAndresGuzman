@@ -40,9 +40,11 @@
   </div>
   <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
 
-    <div>
-      La descripción es requerida.
-    </div>
+    @if (description.errors!['required']) {
+      <div>
+        La descripción es requerida.
+      </div>
+    }
 
   </div>
 
