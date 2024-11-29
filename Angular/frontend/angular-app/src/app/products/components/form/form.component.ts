@@ -9,6 +9,6 @@ import { Product } from '../../models/product';
 })
 export class FormComponent {
 
-  product: Product = new Product()
+  product: Product = {name: 'Teclado' , description: 'algo', price: 40}
 
 }
