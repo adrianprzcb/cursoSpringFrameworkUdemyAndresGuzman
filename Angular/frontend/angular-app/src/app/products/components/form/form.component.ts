@@ -20,6 +20,7 @@ export class FormComponent {
     @Output() newProductEvent = new EventEmitter();
 
     onSubmit(): void{
+      this.newProductEvent.emit(this.product);
       console.log(this.product)
     }
 
