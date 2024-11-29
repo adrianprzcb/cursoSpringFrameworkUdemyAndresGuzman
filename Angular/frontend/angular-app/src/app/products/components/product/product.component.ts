@@ -28,18 +28,24 @@ export class ProductComponent implements OnInit{
   addProduct(product: Product){
 
     if(product.id > 0){
-      this.products = this.products.map( prod => {
-        if(prod.id == product.id){
-          return {...product};
-        }
-        return prod;
-      })
+      this.service.update(product).subscribe(productUpd =>
+      {
+        this.products = this.products.map( prod => {
+          if(prod.id == product.id){
+            return {...productUpd};
+          }
+          return prod;
+        });
+      }
+      );
+
     }else{
 
       product.id = new Date().getTime();
 
       this.service.create(product).subscribe(productNew =>
       {
+        //Tmb se puede usar this.products.push({...productNew})
         this.products = [... this.products, {...productNew}]
       }
       )
