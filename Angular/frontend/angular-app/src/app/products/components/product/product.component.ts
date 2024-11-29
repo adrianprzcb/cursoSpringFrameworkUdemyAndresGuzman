@@ -42,7 +42,7 @@ export class ProductComponent implements OnInit{
   }
 
   onUpdateProduct(productRow: Product){
-    this.productSelected = productRow;
+    this.productSelected = {...productRow};
   }
 
   onRemoveProduct(id: number) : void{
