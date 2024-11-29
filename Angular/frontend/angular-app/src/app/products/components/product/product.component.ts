@@ -56,8 +56,10 @@ export class ProductComponent implements OnInit{
   }
 
   onRemoveProduct(id: number) : void{
+    this.service.remove(id).subscribe(() => {
+      this.products = this.products.filter(products => products.id != id);
 
-    this.products = this.products.filter(products => products.id != id);
+    })
 
   }
 
