@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ProductComponent } from './products/components/product.component';
+import { ProductComponent } from './products/components/product/product.component';
 
 
 @Component({
