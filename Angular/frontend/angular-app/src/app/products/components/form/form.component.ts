@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'product-form',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './form.component.css'
 })
 export class FormComponent {
+
+  product: Product = new Product()
 
 }
