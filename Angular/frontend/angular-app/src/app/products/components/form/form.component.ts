@@ -10,6 +10,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormComponent {
 
-  product: Product = {name: 'Teclado' , description: 'algo', price: 40}
+  product: Product = {
+    id: 0,
+    name: '' ,
+    description: '',
+    price: 0};
 
 }
+
