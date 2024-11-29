@@ -11,7 +11,7 @@
     required>
   </div>
 
-  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="altert altert-danger">
+  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
 
     <div>
       El nombre es requerido.
@@ -29,7 +29,7 @@
     #description="ngModel"
     required>
   </div>
-  <div *ngIf="description.invalid && (description.dirty || description.touched)" class="altert altert-danger">
+  <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
 
     <div>
       La descripción es requerida.
@@ -49,7 +49,7 @@
 
   </div>
 
-  <div *ngIf="price.invalid && (price.dirty || price.touched)" class="altert altert-danger">
+  <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
 
     <div>
       El precio es requerido.
