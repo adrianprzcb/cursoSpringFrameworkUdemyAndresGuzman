@@ -12,7 +12,7 @@ export class FormComponent {
 
   product: Product = {
     id: 0,
-    name: ' ' ,
+    name: '' ,
     description: '',
     price: 0};
 
